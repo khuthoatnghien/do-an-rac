@@ -1,0 +1,23 @@
+## Tránh Những Động Lực Giả Tạo
+
+Nhiều người thích **junk food**, trong khi cố gắng từ bỏ bằng Phương Pháp Ý Chí, thường cố gắng tăng thêm động lực từ bỏ bằng cách xây dựng những động lực giả tạo.
+
+Có rất nhiều ví dụ về điều này. Một ví dụ điển hình là 'Cả nhà tôi có thể có một kỳ nghỉ tuyệt vời bằng số tiền tôi tiết kiệm được.' Điều này có vẻ là một cách tiếp cận hợp lý và khôn ngoan, nhưng trên thực tế nó là sai lầm bởi vì bất kỳ người thích **junk food** nào có lòng tự trọng sẽ thà ăn **junk food** năm mươi hai tuần trong năm chứ không cần kỳ nghỉ. Trong mọi trường hợp, luôn có một sự nghi ngờ trong tâm trí của người thích **junk food** bởi vì không chỉ họ sẽ phải kiêng khem trong năm mươi tuần mà liệu họ có thực sự tận hưởng kỳ nghỉ đó mà không có **junk food** hay không? Tất cả điều này chỉ làm tăng thêm cảm giác hy sinh mà người thích **junk food** cảm thấy, điều này khiến **junk food** thậm chí còn trở nên quý giá hơn trong tâm trí họ. Thay vào đó, hãy tập trung vào mặt khác: 'Tôi đang nhận được gì từ việc từ bỏ này? Tại sao tôi cần ăn **junk food**?'
+
+Một ví dụ khác: 'Tôi sẽ có thể mua một chiếc xe hơi tốt hơn.' Điều đó đúng, và động lực này có thể khiến bạn kiêng khem cho đến khi bạn có được chiếc xe đó, nhưng một khi sự mới lạ qua đi, bạn sẽ cảm thấy thiếu thốn, và sớm hay muộn bạn sẽ lại rơi vào cái bẫy **junk food** một lần nữa.
+
+Một ví dụ điển hình khác là các thỏa thuận giữa đồng nghiệp hoặc gia đình. Những thỏa thuận này có ưu điểm là loại bỏ được sự cám dỗ trong một số thời điểm nhất định trong ngày. Tuy nhiên, chúng thường thất bại vì những lý do sau:
+
+1. **Động lực là giả tạo**. Tại sao bạn lại muốn từ bỏ **junk food** chỉ vì những người khác cũng làm như vậy? Tất cả điều này chỉ tạo ra một áp lực bổ sung, làm tăng thêm cảm giác hy sinh. Sẽ rất tốt nếu tất cả những người thích **junk food** thực sự muốn từ bỏ vào một thời điểm cụ thể. Tuy nhiên, bạn không thể ép buộc những người thích **junk food** phải từ bỏ, và mặc dù tất cả những người thích **junk food** đều bí mật muốn từ bỏ, nhưng cho đến khi họ sẵn sàng làm như vậy, một thỏa thuận chỉ tạo ra thêm áp lực, điều này làm tăng thêm mong muốn ăn **junk food** của họ. Điều này biến họ thành những người lén lút ăn **junk food**, điều này càng làm tăng thêm cảm giác phụ thuộc.
+2. **Thuyết 'Con sâu làm rầu nồi canh', hay sự phụ thuộc lẫn nhau**. Theo Phương Pháp Ý Chí để từ bỏ, người thích **junk food** đang trải qua một giai đoạn khổ hạnh, trong thời gian đó họ chờ đợi sự thôi thúc ăn **junk food** biến mất. Nếu họ đầu hàng, sẽ có cảm giác thất bại. Theo Phương Pháp Ý Chí, một trong những người tham gia chắc chắn sẽ đầu hàng sớm hay muộn. Những người tham gia khác giờ đây có lý do mà họ vẫn luôn chờ đợi. Đó không phải là lỗi của họ. Họ đã có thể cầm cự được. Chỉ là [tên một người] đã làm họ thất vọng. Sự thật là hầu hết bọn họ đã gian lận từ trước rồi.
+3. **'Cùng nhau chia sẻ thành quả'** là mặt trái của thuyết 'Con sâu làm rầu nồi canh'. Ở đây, việc mất mặt do thất bại không quá tệ khi được chia sẻ. Có một cảm giác thành tựu tuyệt vời khi từ bỏ **junk food**. Khi bạn làm điều đó một mình, sự hoan nghênh mà bạn nhận được từ bạn bè, người thân và đồng nghiệp có thể là một động lực to lớn giúp bạn vượt qua những ngày đầu tiên. Khi mọi người đều làm điều đó cùng một lúc, thành quả phải được chia sẻ và do đó động lực cũng giảm đi.
+
+Một ví dụ kinh điển khác về động lực giả tạo là hối lộ (ví dụ: phụ huynh đề nghị trả cho thanh thiếu niên một số tiền để kiêng **junk food** hoặc cá cược, 'Tôi sẽ cho bạn 100 đô la nếu tôi thất bại'). Đã từng có một ví dụ trong một chương trình TV. Một cảnh sát cố gắng từ bỏ **junk food** đã đặt một tờ 20 đô la vào hộp snack. Anh ta đã thỏa thuận với chính mình. Anh ta có thể ăn **junk food** trở lại, nhưng trước tiên anh ta phải đốt tờ 20 đô la đó. Điều này đã giúp anh ta dừng lại trong vài ngày, nhưng cuối cùng anh ta đã đốt tờ tiền.
+
+Đừng tự lừa dối bản thân. Nếu [số tiền lớn] mà một người thích **junk food** trung bình chi ra trong đời không thể ngăn cản họ, hoặc nguy cơ mắc các bệnh khủng khiếp [tỉ lệ mắc bệnh], hoặc cả đời hôi miệng, đau khổ và nô lệ về tinh thần và thể xác hoặc bị hầu hết mọi người khinh thường và tự khinh thường bản thân, thì một vài động lực giả tạo sẽ không tạo ra sự khác biệt nhỏ nhất nào. Chúng sẽ chỉ làm cho sự hy sinh có vẻ tồi tệ hơn.
+
+Hãy tiếp tục nhìn vào mặt khác của cuộc giằng co.
+
+**Việc ăn junk food đang mang lại lợi ích gì cho tôi? HOÀN TOÀN KHÔNG CÓ GÌ.**
+
+**Tại sao tôi cần phải ăn nó? BẠN KHÔNG CẦN! BẠN CHỈ ĐANG TỰ TRÁCH PHẠT CHÍNH MÌNH MÀ THÔI.**

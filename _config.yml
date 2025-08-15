@@ -1,0 +1,9 @@
+title: Thoát nghiện đồ ăn rác
+author: duykhanh471
+description: Hướng dẫn cách thoát nghiện đồ ăn rác (junk food)
+remote_theme: "jekyll/minima@7d91bb5"
+minima:
+  skin: auto
+  nav_pages:
+    - muc-luc.md
+
