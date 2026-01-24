@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Các loại hình đồ ăn rác thay thế - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="các-loại-hình-đồ-ăn-rác-thay-thế"><a class="header" href="#các-loại-hình-đồ-ăn-rác-thay-thế">Các loại hình đồ ăn rác thay thế</a></h1>
+<p>Một vài ví dụ về “đồ ăn rác thay thế” bao gồm việc chỉ ăn fast food “ít hại hơn”, chuyển sang snack lành mạnh, đồ uống không đường, khẩu phần nhỏ, “ăn gian đoạn”, hoặc tự cho phép mình dùng một món “nhẹ đô” để vượt qua cơn thèm. <strong>TUYỆT ĐỐI KHÔNG SỬ DỤNG BẤT KỲ HÌNH THỨC ĐỒ ĂN RÁC THAY THẾ NÀO.</strong> Chúng chỉ khiến việc chấm dứt nghiện đồ ăn rác trở nên khó khăn hơn, chứ không hề dễ dàng hơn. Khi cơn vật vã (withdrawal pangs) xuất hiện mà bạn dùng những thứ thay thế đó, bạn chỉ đang kéo dài cơn thèm và làm nó dai dẳng hơn. Về bản chất, bạn đang tự nhủ rằng mình vẫn cần đồ ăn rác để lấp đầy một khoảng trống nào đó. Làm vậy chẳng khác gì nhượng bộ bọn cướp hoặc chiều theo cơn mè nheo của trẻ con — chỉ khiến cơn đau xuất hiện thường xuyên và kéo dài hơn. Trong mọi trường hợp, đồ ăn rác thay thế <strong>không</strong> giải tỏa được cơn đau. Thứ bạn đang thèm là một số chất dẫn truyền thần kinh nhất định, và tất cả những gì “hàng thay thế” làm được chỉ là khiến bạn tiếp tục nghĩ về đồ ăn rác. Hãy ghi nhớ:</p>
+<ol>
+<li>Không có đồ ăn rác thay thế cho đồ ăn rác.</li>
+<li>Bạn không cần đồ ăn rác. Nó không phải là thức ăn theo nghĩa sinh lý; nó là chất kích thích. Khi cơn đau đến, hãy nhắc mình rằng <strong>người nghiện</strong> mới là người phải chịu cơn vật vã, chứ <strong>người không nghiện</strong> thì không. Hãy nhìn nhận chúng đúng bản chất: một dạng ma túy. Hãy coi mỗi cơn thèm là dấu hiệu của một “con quỷ” đang chết dần.</li>
+<li>Đồ ăn rác tạo ra khoảng trống chứ không lấp đầy khoảng trống. Bạn càng sớm dạy cho não mình biết rằng bạn <strong>không cần</strong> ăn vì khoái cảm nhân tạo, bạn càng sớm được tự do. Đặc biệt, hãy tránh mọi thứ có hình dáng giống đồ ăn rác: quảng cáo, kệ hàng bắt mắt, combo khuyến mãi, hình ảnh “ăn cho vui” trên mạng xã hội. Điều này không phải là khắc khổ; bạn vẫn ăn uống bình thường để đáp ứng <strong>đói sinh lý</strong>, nhưng không dùng đồ ăn rác. Luôn có cách để phân biệt khi nào và ở đâu. Đúng là một số rất ít người cho rằng họ “thành công” nhờ dùng đồ ăn rác “nhẹ” hoặc “ăn điều độ”. Thực tế, họ chấm dứt được <em>mặc dù</em> dùng những biện pháp đó, chứ không phải <em>nhờ</em> chúng. Thật đáng tiếc khi nhiều người vẫn khuyên dùng các biện pháp thay thế kiểu này.</li>
+</ol>
+<p>Điều này không có gì lạ, bởi nếu bạn không hiểu đầy đủ cái bẫy của đồ ăn rác, thì “ăn kiêng”, “cắt giảm”, hay “đồ thay thế lành mạnh” nghe rất hợp lý. Chúng dựa trên niềm tin rằng khi bạn dừng ăn đồ ăn rác, bạn có hai kẻ thù lớn cần đánh bại:</p>
+<p>– Phá bỏ thói quen.
+– Vượt qua những cơn vật vã thể xác dữ dội.</p>
+<p>Nếu tin rằng có hai kẻ thù mạnh như vậy, thì việc không đánh cùng lúc mà đánh từng kẻ một nghe có vẻ hợp lý. Vì thế, người ta đề xuất giảm dần: từ mỗi ngày sang mỗi tuần, từ “nặng đô” sang “nhẹ đô”, từ “ăn thoải mái” sang “ăn kiểm soát”. Sau đó, khi thói quen đã “bị phá”, mới tiếp tục giảm nguồn cung để xử lý cơn vật vã.</p>
+<p>Nghe có vẻ logic, nhưng lại dựa trên thông tin sai. Đồ ăn rác không phải là thói quen; đó là <strong>nghiện dopamine</strong>. Cơn khó chịu thể xác khi ngừng ăn đồ ăn rác là rất nhỏ và ngắn. Mục tiêu thực sự khi dừng là tiêu diệt <strong>cả hai con quái vật</strong> — trong cơ thể và trong tâm trí — <strong>càng nhanh càng tốt</strong>. Mọi biện pháp thay thế chỉ kéo dài sự tồn tại của “con tiểu quỷ” trong cơ thể, và vì thế cũng kéo dài quá trình tẩy não. Cách tiếp cận đúng cho phép bạn dừng <strong>ngay lập tức</strong>, tiêu diệt sự tẩy não <strong>trước</strong> bữa ăn cuối cùng. Con tiểu quỷ sẽ sớm chết, và ngay cả khi nó đang hấp hối, nó cũng không gây rắc rối hơn so với khi bạn còn nghiện.</p>
+<p>Hãy tự hỏi: liệu bạn có thể chữa nghiện một chất kích thích bằng cách khuyên dùng chính chất đó, chỉ “nhẹ hơn” không? Trên mạng có vô số câu chuyện về những người bỏ được đồ ăn rác “nặng”, nhưng lại mắc kẹt với đồ “thay thế an toàn”, rơi đúng cái bẫy biện minh của con tiểu quỷ. Đừng để bị đánh lừa bởi việc đồ ăn rác “nhẹ” có vẻ ít hại — lần đầu dùng chất kích thích nào cũng vậy. Tất cả các dạng đồ ăn rác thay thế đều có tác dụng <strong>giống hệt</strong> nhau. Một số người chuyển sang ăn vặt liên tục; dù cảm giác thèm và cảm giác đói sinh lý có vẻ giống, chúng <strong>không thể thay thế cho nhau</strong>. Thực tế, nếu có thứ gì khiến bạn nghĩ tới đồ ăn rác, thì chính là việc ăn uống vô độ và lặt vặt. Như đã nói, “ăn kiêng” và “ăn an toàn” chỉ đặt bạn vào thế giằng co, khiến việc chống lại cơn thèm trở nên khó chịu đến mức bạn cảm thấy nhẹ nhõm khi quay lại món quen thuộc.</p>
+<p>Tệ nạn lớn nhất của đồ ăn rác thay thế là kéo dài vấn đề thật: <strong>sự tẩy não</strong>. Bạn có cần “đồ thay thế” cho bệnh cúm khi nó đã qua không? Tất nhiên là không. Khi bạn nói mình cần đồ thay thế, bạn đang nói rằng mình đang <strong>hy sinh</strong>. Trầm uất trong phương pháp ý chí xuất phát từ niềm tin rằng bạn đang bị tước đoạt. Rốt cuộc, bạn chỉ thay một vấn đề bằng một vấn đề khác. Không có thú vui nào trong việc nhồi nhét cơ thể bằng thức ăn, đồ uống kích thích hay chất gây nghiện khác. Kết quả chỉ là mệt mỏi, khốn khổ, và sớm hay muộn bạn cũng quay lại chất cũ.</p>
+<p>Những người nghiện “tình cờ” đặc biệt khó bác bỏ niềm tin rằng họ đang bị tước đi “phần thưởng nhỏ”, giống như cảm giác không được phép vào mạng trong một chuyến đi hay một dịp gia đình. Có người nói: “Tôi không thể xả stress nếu không có đồ ăn rác.” Câu nói đó tự nó chứng minh vấn đề — thường thì sự nghỉ ngơi không đến vì họ cần hay muốn nó, mà vì họ đang cần <strong>gãi ngứa</strong>.</p>
+<p>Hãy nhớ: các bữa ăn vì khoái cảm nhân tạo <strong>chưa bao giờ</strong> là phần thưởng thực sự. Chúng giống như việc đi giày chật để rồi thấy “sướng” khi cởi ra. Nếu bạn tin mình cần một phần thưởng, hãy thử coi “cởi giày chật” là phần thưởng: đi giày hoặc mặc đồ chật hơn một cỡ khi làm việc, rồi chỉ cởi ra lúc nghỉ. Cảm giác dễ chịu sẽ rất rõ. Nghe có vẻ ngớ ngẩn — và đúng là ngớ ngẩn. Nhưng đó chính xác là điều người nghiện đang làm. Khi còn mắc kẹt trong bẫy, điều này khó thấy; nhưng chẳng bao lâu nữa bạn sẽ không cần “phần thưởng” ấy, và bạn sẽ nhìn những người còn mắc kẹt với sự thương hại chân thành, tự hỏi vì sao họ chưa nhìn ra.</p>
+<p>Nếu bạn tiếp tục tự lừa rằng đồ ăn rác là phần thưởng thật, hoặc rằng bạn cần đồ thay thế, bạn sẽ cảm thấy thiếu thốn và khốn khổ, và rất có thể sẽ rơi lại vào bẫy. Nếu bạn thực sự cần nghỉ ngơi — như bất kỳ ai làm việc căng thẳng đều cần — bạn sẽ sớm tận hưởng sự nghỉ ngơi đó <strong>nhiều hơn</strong>, bởi bạn không còn tự gây nghiện cho mình. Hãy nhớ: bạn không cần đồ thay thế. Cảm giác thèm chỉ là <strong>thèm dopamine</strong>, và nó sẽ sớm qua. Hãy coi đó là dấu hiệu của sự giải phóng đang diễn ra, và tận hưởng việc cơ thể và tâm trí được tháo xiềng khỏi sự lệ thuộc vào đồ ăn rác.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="24.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="26.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="24.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="26.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

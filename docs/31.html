@@ -1,0 +1,257 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lời khuyên dành cho người không còn ăn đồ ăn rác - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="lời-khuyên-dành-cho-người-không-còn-ăn-đồ-ăn-rác"><a class="header" href="#lời-khuyên-dành-cho-người-không-còn-ăn-đồ-ăn-rác">Lời khuyên dành cho người <strong>không còn ăn đồ ăn rác</strong></a></h1>
+<h2 id="hỗ-trợ-người-khác-đọc-cuốn-sách-này"><a class="header" href="#hỗ-trợ-người-khác-đọc-cuốn-sách-này">Hỗ trợ người khác đọc cuốn sách này</a></h2>
+<p>Trước hết, hãy suy nghĩ kỹ lại toàn bộ những gì cuốn sách này đã trình bày, và <strong>thực sự hiểu</strong> một người nghiện đồ ăn rác đang trải qua điều gì. Tuyệt đối tránh ép buộc họ đọc sách bằng cách phán xét rằng họ đang tự hủy hoại sức khỏe, “ăn như vậy là chết sớm”, hay “đùa với lửa”. Họ <strong>biết rõ điều đó hơn ai hết</strong>.</p>
+<p>Người nghiện đồ ăn rác không ăn vì đói sinh lý, cũng không phải vì họ “thích ăn” theo nghĩa thông thường. Họ ăn để <strong>xoa dịu sự khó chịu do chính nghiện tạo ra</strong>, và để giữ lại chút cảm giác ổn định, quen thuộc, hay tự trọng còn sót lại. Họ đã phụ thuộc vào khoái cảm nhân tạo đó và tin rằng nó giúp họ thư giãn, giải tỏa căng thẳng, lấy lại tinh thần, hoặc “thưởng cho bản thân” — cứ gọi là niềm vui hay chỗ dựa tinh thần cũng được. Đồng thời, họ mang trong đầu nỗi ám ảnh rằng cuộc sống sẽ trở nên nhạt nhẽo, trống rỗng nếu thiếu những món ăn đó.</p>
+<p>Nếu bạn cố ép họ dừng lại, họ sẽ cảm thấy như một con thú bị dồn vào góc, và <strong>cơn thèm tâm lý sẽ càng mạnh hơn</strong>. Điều này thậm chí có thể biến họ thành những người nghiện bí mật: ăn lén, giấu giếm, và vô tình thổi phồng giá trị của đồ ăn rác trong tâm trí họ.</p>
+<p>Thay vào đó, hãy tập trung vào mặt tích cực. Tìm cách giới thiệu họ tới những người đã <strong>thực sự thoát khỏi</strong> nghiện đồ ăn rác, những người không còn coi đó là sự hy sinh hay kiêng khem. Hãy để họ nghe những người từng trải nói rằng họ cũng từng tin mình sẽ nghiện cả đời, và rằng cuộc sống khi không còn ăn vì khoái cảm nhân tạo <strong>nhẹ nhõm và rõ ràng hơn</strong> như thế nào.
+Khi họ bắt đầu tin rằng việc dừng lại là khả thi, tâm trí họ sẽ dần cởi mở. Lúc đó, bạn mới có thể giúp họ nhìn ra những ảo tưởng do cơn thèm tâm lý tạo ra: rằng cảm giác “đã” khi ăn thực chất chỉ là <strong>sự chấm dứt tạm thời của khó chịu</strong>, chứ không phải một khoái lạc hay sự nuôi dưỡng thật sự. Ngược lại, chính nó làm họ mệt mỏi hơn, cáu kỉnh hơn, và kém hài lòng hơn về lâu dài.</p>
+<p>Khi đến bước này, rất có thể họ đã sẵn sàng tự đọc cuốn sách. Hãy nói trước rằng sách có đề cập đến những vấn đề liên quan đến cơ thể, năng lượng, sự trì trệ, cảm giác uể oải hay mất kiểm soát, nhưng cần nhấn mạnh rằng <strong>đây không phải sách dinh dưỡng</strong>, và những vấn đề đó chỉ được nhắc tới để phá bỏ niềm tin sai lầm, không phải để hù dọa.</p>
+<p>Tóm lại, đừng để cuốn sách này bị bỏ quên. Hãy chia sẻ với bạn bè một cách tinh tế, không áp đặt. Nếu bạn cố “thắng” trong tranh luận hay làm họ thấy mình đúng – họ sai, bạn chỉ khiến họ khép chặt hơn và làm nỗi sợ trong họ sâu thêm.</p>
+<h2 id="tái-nghiện"><a class="header" href="#tái-nghiện">“Tái nghiện”</a></h2>
+<p>Phần này là một lời cảnh báo dành cho những người đã thoát khỏi bẫy đồ ăn rác. Trước hết, gọi đó là “tái nghiện” thực ra không chính xác. Điều xảy ra chỉ đơn giản là bạn <strong>trượt chân</strong>, cho con tiểu quỷ ăn một lần, và từ đó nó lại đánh thức con đại quỷ của sự tẩy não.</p>
+<p>Khi trượt chân, người nghiện thường sinh ra hàng loạt niềm tin phi lý:</p>
+<p>– “Mình sẽ không bao giờ thoát khỏi cái này được” – <strong>thảm họa hóa vấn đề</strong>.
+– “Mình phải ăn uống hoàn hảo, sống kỷ luật, không bao giờ sai sót” – <strong>kỳ vọng hoàn hảo</strong>.
+– “Hôm nay mình đã ăn đồ ăn rác, vậy thì đọc sách này để làm gì nữa… Mục tiêu của mình là không ăn, mà giờ mình lại phá vỡ rồi, mình thật vô dụng” – <strong>khả năng chịu đựng thất vọng kém</strong>.
+– “Người khác đã bỏ được (n) tuần, còn mình thì không, vậy là mình vô vọng rồi” – <strong>so sánh bản thân với người khác</strong>.
+– “Mình không được phép có cảm giác thèm ăn hay nghĩ đến đồ ăn rác” – những <strong>định kiến</strong> do gia đình, xã hội, hoặc chính bản thân đặt ra.</p>
+<p>Hãy tự hỏi: việc tự trừng phạt mình như vậy có giúp bạn tự do hơn không? Hay chỉ khiến hành trình này trở nên nặng nề và đáng sợ?</p>
+<p>Cấu trúc tẩy não của mỗi người nghiện đồ ăn rác là khác nhau và dường như vô tận. Bạn hiểu bản thân mình nhất. Nhưng nếu nhìn thẳng, bạn sẽ thấy vấn đề luôn quay về một điểm: <strong>bạn đã từng tin rằng đồ ăn rác có giá trị</strong>. Vậy giá trị đó thực sự là gì?</p>
+<p>Một điều thường bị bỏ qua là: quá trình tháo gỡ sự tẩy não <strong>cần thời gian</strong>. Điều này không khiến việc thoát nghiện trở nên khó khăn hơn, nhưng vì đồ ăn rác và hình ảnh của nó xuất hiện ở khắp nơi, việc chủ động nhận diện và bác bỏ những thông điệp sai lệch đó cần một khoảng thời gian để thấm sâu. Vì vậy, việc đọc lại cuốn sách này nhiều lần — có thể lướt nhanh, tập trung vào những chương bạn còn mơ hồ — là hoàn toàn hợp lý và không tốn nhiều thời gian.</p>
+<p>Một hiện tượng khá phổ biến, đặc biệt ở những người có nền tảng đạo đức hoặc tôn giáo mạnh, là họ <strong>mong muốn việc dừng lại phải khổ sở</strong> như một hình thức chuộc lỗi. Khi thấy việc thoát nghiện quá dễ, họ lại cảm thấy áy náy. Nhưng tại sao phải tự hành hạ bản thân và làm mọi thứ khó hơn? Đây chính là sự ranh mãnh của con tiểu quỷ.</p>
+<p>Hãy tách mình ra khỏi con tiểu quỷ đó — nó đã được ngành công nghiệp đồ ăn rác gieo vào bạn từ lâu. Hãy tưởng tượng nó như một kẻ bắt nạt trong sân trường. Nếu bạn nhượng bộ, bạn làm nó mạnh hơn. Nếu bạn “đấu đá” với nó trong thù hằn, bạn cũng chỉ làm nó hiện diện rõ hơn, vì tận gốc bạn vẫn chưa thay đổi cách nhìn về cái bẫy.
+Điều cần làm là <strong>nhận diện sai sót, đứng dậy, và tiếp tục sống như một người tự do</strong>.</p>
+<p>Bạn không phải là những thôi thúc trong đầu mình. Việc quan sát suy nghĩ — dù thông qua thiền chánh niệm hay đơn giản là nhận biết — sẽ giúp bạn thấy rõ bản chất của tâm trí: suy nghĩ đến rồi đi, còn bạn thì không phải chúng. Bạn không thể chiến thắng bằng cách chống lại chính mình hay chống lại con tiểu quỷ. Bạn chỉ cần <strong>không còn tin vào những gì nó nói</strong>.</p>
+<p>Và cuối cùng, hãy gạt bỏ ý nghĩ về thất bại. Nó không có chỗ đứng ở đây.</p>
+<h2 id="Đi-ngược-lời-khuyên-thông-thường"><a class="header" href="#Đi-ngược-lời-khuyên-thông-thường">Đi ngược lời khuyên thông thường</a></h2>
+<p>Phần này là một bổ sung cần thiết, dù có phần đi ngược trực giác phổ biến.</p>
+<p>Một số người áp dụng phương pháp Easyway nhận thấy ham muốn ăn đồ ăn rác giảm nhanh đến mức họ không còn nhu cầu “bữa cuối cùng”. <strong>Điều này hoàn toàn bình thường.</strong> Tuy nhiên, đừng xem nhẹ sức nặng tâm lý của “lần ăn cuối”. Việc quan sát kỹ và củng cố cảm giác ghê tởm đối với hành vi ăn vì khoái cảm nhân tạo có thể rất hiệu quả. Với một số người, trải nghiệm đó giúp họ thấy rõ: không có gì đáng tiếc, và thật nhẹ nhõm khi biết rằng mình sẽ không còn phải lặp lại hành vi ấy nữa. Dĩ nhiên, phản ứng cá nhân có thể khác nhau.</p>
+<p>Nếu bạn đã tự do khỏi chiếc bẫy này một thời gian và đã tháo gỡ được phần lớn sự tẩy não, thì không có lý do gì phải tiếp tục “nuôi” con tiểu quỷ bằng những lần ăn mang tính nghi thức. Không cần kéo dài cảm giác vướng víu mà nó tạo ra. Tự do là không còn phải làm vậy.</p>
+<h2 id="chung-tay-chấm-dứt-vấn-nạn-này"><a class="header" href="#chung-tay-chấm-dứt-vấn-nạn-này">Chung tay chấm dứt vấn nạn này</a></h2>
+<p>Ngành công nghiệp đồ ăn siêu chế biến là một trong những nghịch lý lớn của xã hội hiện đại. Nó khai thác chính những tiến bộ về công nghệ, logistics và truyền thông—những thứ vốn được tạo ra để nâng cao chất lượng sống—để bán khoái cảm nhân tạo ở quy mô chưa từng có.</p>
+<p>Nền tảng giúp loài người tiến xa là khả năng truyền đạt kiến thức và kinh nghiệm, để tránh lặp lại sai lầm. Ngay cả động vật cũng dạy con chúng tránh bẫy nguy hiểm. Thế nhưng, trong lĩnh vực này, xã hội lại hành xử như thể không có gì để học.</p>
+<p>Các nhà sản xuất đồ ăn rác không hành động vì thiện chí, cũng không thực sự tin rằng họ đang “nuôi dưỡng” con người, đặc biệt khi nghiện thực phẩm siêu chế biến ngày càng được nghiên cứu rộng rãi. Ban đầu, người ta có thể tin rằng đây chỉ là “tiện lợi” hay “niềm vui nhỏ”, nhưng thực tế cho thấy toàn bộ mô hình dựa trên sự leo thang kích thích, tính mới lạ liên tục và việc làm mờ ranh giới giữa <strong>đói sinh lý</strong> và <strong>thèm tâm lý</strong>. Hãy thử tìm một thương hiệu nào dám tuyên bố giáo dục khách hàng về việc thoát khỏi sự lệ thuộc này.</p>
+<p>Sự đạo đức giả ở đây là rõ ràng. Ở những lĩnh vực khác, chúng ta lên án việc thao túng hành vi và gây nghiện. Thế nhưng với đồ ăn rác, điều đó lại được bình thường hóa. Số người lệ thuộc vào việc ăn vì khoái cảm nhân tạo tăng đều qua từng năm. Họ đánh đổi năng lượng, sự ổn định cảm xúc, khả năng tập trung và thời gian—không phải vì đói, mà vì một vòng lặp khó chịu–giải tỏa–khó chịu do chính nghiện tạo ra. Các công ty không cần quảng cáo rầm rộ theo cách truyền thống; môi trường xung quanh đã được thiết kế để liên tục nhắc bạn rằng “ăn một chút thôi” là vô hại. Hàng mẫu luôn sẵn có, và ngày nay khách hàng còn được khuyến khích chia sẻ, đánh giá, quảng bá thay cho nhà sản xuất.</p>
+<p>Những nhãn cảnh báo mơ hồ kiểu “ăn có trách nhiệm” hay “cân bằng lối sống” được treo như một hình thức miễn trừ đạo đức. Không có cơ chế thực sự nào để giảm thiểu sự tiếp cận liên tục này, bởi bất kỳ biện pháp nghiêm túc nào cũng sẽ làm giảm lợi nhuận. Nếu có quy định chặt chẽ hơn, ngành công nghiệp sẽ tìm cách lách luật, hoặc thuê chuyên gia lập luận rằng hạn chế từng dẫn đến phản tác dụng—trong khi cố tình bỏ qua thực tế rằng việc thả nổi cũng không hề giải quyết vấn đề.</p>
+<p>Giải pháp thực sự nằm ở giáo dục nhận thức. Nếu một đứa trẻ có thể học cách phân biệt rượu bia và thuốc lá với đồ uống thông thường, thì nó cũng có thể học cách nhận diện khoái cảm nhân tạo trong thực phẩm. Xã hội đang bắt đầu thay đổi: ngày càng nhiều người đặt câu hỏi về việc tại sao mình ăn khi không hề đói. Người nghiện đồ ăn rác không “chọn” nghiện theo nghĩa đầy đủ của từ đó; họ bị dẫn vào một chiếc bẫy được thiết kế tinh vi. Nếu họ thực sự có lựa chọn ngay từ đầu, người duy nhất còn “tự do” thử nghiệm sẽ chỉ là những người mới bắt đầu, tin rằng mình có thể dừng lại bất cứ lúc nào.</p>
+<p>Tại sao lại tồn tại tiêu chuẩn kép? Tại sao với các chất gây nghiện khác, người ta thừa nhận cần hỗ trợ chuyên môn, còn với đồ ăn rác, lời khuyên phổ biến nhất vẫn là “chỉ cần kỷ luật hơn”, “ăn điều độ”, hoặc “thưởng cho bản thân”? Người nghiện thừa biết những lời đó vô nghĩa với họ. Tệ hơn, chúng củng cố ảo tưởng rằng vấn đề nằm ở nhân cách yếu đuối, thay vì ở cơ chế gây nghiện. Lời khuyên “hãy tìm niềm vui khác” cũng chẳng khá hơn; nhiều người đã thử mọi cách và vẫn quay lại ăn trong im lặng.</p>
+<p>Các chiến dịch hù dọa về cân nặng hay bệnh tật không giúp ai thoát nghiện. Chúng chỉ làm tăng lo âu, và lo âu lại là một trong những lý do khiến người ta tìm đến khoái cảm nhân tạo. Thanh thiếu niên biết đồ ăn rác không tốt, nhưng cũng tin rằng “ăn một chút thì có sao đâu”. Và vì sự hiện diện của nó là khắp nơi, sớm muộn họ cũng sẽ thử—không phải vì đói, mà vì tò mò và áp lực xã hội. Với thực phẩm được thiết kế để kích thích tối đa, việc lệ thuộc có thể hình thành rất nhanh.</p>
+<p>Tại sao chúng ta chấp nhận tình trạng này? Tại sao không nói thẳng rằng đồ ăn rác siêu chế biến hoạt động như một chất gây nghiện: không giúp thư giãn thật sự, không mang lại hạnh phúc bền vững, mà chỉ tạm thời chấm dứt sự khó chịu do chính nó tạo ra—rồi để lại khó chịu lớn hơn? Tại sao không có chiến dịch giáo dục rõ ràng về bản chất này? Sự thờ ơ của xã hội trước vấn đề này không khác gì đứng nhìn một tai nạn đang diễn ra.</p>
+<p>Đang có những chuyển biến. Nhận thức đang lan rộng. Cuốn sách này chỉ là một phần trong làn sóng đó. Bạn có thể góp phần bằng cách chia sẻ cách nhìn nhận đúng đắn, không áp đặt, không hù dọa.</p>
+<p>Vì vậy, nếu bạn thấy ai đó đang vật lộn với việc “kiểm soát” ăn uống bằng ý chí, hoặc lặp đi lặp lại vòng cắt giảm–tái nghiện, hãy chỉ cho họ cách tiếp cận này. Mục tiêu không phải là thay đổi thực đơn, mà là thay đổi cách nhìn về đồ ăn rác nói chung. Khi bạn thấy hành vi này được bình thường hóa—trên mạng hay ngoài đời—một lời góp ý tỉnh táo, tôn trọng là đủ để gieo một hạt giống.</p>
+<h2 id="cảnh-báo-cuối-cùng"><a class="header" href="#cảnh-báo-cuối-cùng">Cảnh báo cuối cùng</a></h2>
+<p>Giờ bạn có thể tận hưởng phần đời còn lại với tư cách người không còn ăn vì khoái cảm nhân tạo. Để đảm bảo điều đó, hãy ghi nhớ những điểm sau:</p>
+<ol>
+<li>Đánh dấu trang hướng dẫn tiếp theo và quay lại khi cần.</li>
+<li>Nếu bạn bắt đầu ghen tị với người vẫn lệ thuộc đồ ăn rác, hãy nhớ rằng chính họ mới là người đang chịu sự khó chịu mà bạn đã thoát khỏi.</li>
+<li>Hãy nhớ rằng khi còn nghiện, bạn chẳng hề thực sự thỏa mãn. Đó là lý do bạn rời bỏ chiếc bẫy này. Cuộc sống không–đồ–ăn–rác là trạng thái tự nhiên.</li>
+<li>Không có chuyện “chỉ một lần thôi”.</li>
+<li>Đừng nghi ngờ quyết định không quay lại ăn vì khoái cảm nhân tạo. Bạn biết rõ đó là lựa chọn sáng suốt.</li>
+<li>Nếu gặp khó khăn, hãy tìm đến chuyên gia hiểu rõ cơ chế nghiện thực phẩm siêu chế biến, không phải người chỉ lặp lại những lời khuyên về ý chí.</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="30.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="32.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="30.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="32.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
