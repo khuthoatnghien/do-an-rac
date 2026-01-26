@@ -2,6 +2,8 @@
 
 Một dự án từ [Khu thoát nghiện](https://khuthoatnghien.github.io).
 
+[Tải tệp EPUB](junkfood.epub)
+
 Cuốn sách này là phiên bản [viết lại](https://sites.google.com/site/hackbookeasypeasy) của cuốn sách *Allen Carr's EasyWay to Smoking* cho đồ ăn rác (ultra-processed food, junkfood, fastfood .etc.), hoàn toàn miễn phí và mã nguồn mở, phát hành dưới giấy phép CC-BY-SA. Khả năng thành công của phương pháp này phụ thuộc vào việc bạn:
 
 <span style="font-size:xx-large;">KHÔNG BỎ QUA CHƯƠNG</span>
