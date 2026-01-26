@@ -4,6 +4,3 @@ language = "vi"
 multilingual = false
 src = "src"
 title = "Khu thoát nghiện - Đồ ăn rác"
-
-[build]
-build-dir = "docs"
