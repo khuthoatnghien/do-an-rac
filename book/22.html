@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Giai đoạn thoát nghiện - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="giai-đoạn-thoát-nghiện"><a class="header" href="#giai-đoạn-thoát-nghiện">Giai đoạn thoát nghiện</a></h1>
+<p>Trong vòng tối đa vài tuần sau <strong>lần ăn đồ ăn rác cuối cùng</strong>, bạn có thể trải qua những gì thường được gọi là “cai nghiện”. Những trải nghiệm này gồm <strong>hai yếu tố riêng biệt</strong>, cần được phân biệt rõ ràng:</p>
+<ol>
+<li><strong>Cảm giác khó chịu do thiếu dopamine</strong>: một trạng thái trống rỗng, bồn chồn, giống như đói nhưng không phải đói sinh lý — đó là cảm giác “cần phải ăn một thứ gì đó cho đã”.</li>
+<li><strong>Các yếu tố kích hoạt tâm lý từ bên ngoài</strong>: hình ảnh quảng cáo, đi ngang cửa hàng quen, lướt ứng dụng giao đồ ăn, trò chuyện với bạn bè, những thời điểm quen thuộc trong ngày, v.v.</li>
+</ol>
+<p>Việc không phân biệt được hai yếu tố này là lý do khiến hầu hết các nỗ lực dựa trên ý chí đều thất bại. Nhiều người đã “bỏ ăn đồ ăn rác” rồi lại quay trở lại, không phải vì họ yếu đuối, mà vì họ hiểu sai bản chất của những cảm giác này.</p>
+<p>Cảm giác thiếu dopamine <strong>không gây đau đớn thể xác</strong>, nhưng đừng coi thường nó. Chúng ta thường gọi “cơn đói” là đau, dù thực tế nó chỉ là cảm giác cồn cào, bồn chồn. Không có mô nào bị tổn thương, nhưng cảm giác đó đủ mạnh để làm con người cáu kỉnh và mất tập trung. Sự thèm ăn khoái cảm nhân tạo cũng tương tự, với một điểm khác biệt quan trọng: <strong>cơ thể cần thức ăn thật, không cần đồ ăn rác</strong>. Với tâm thế đúng đắn, cảm giác này rất dễ vượt qua và sẽ nhanh chóng suy yếu.</p>
+<p>Trên thực tế, nếu chỉ xét yếu tố dopamine thuần túy, sau vài ngày không ăn đồ ăn rác, cảm giác thèm dữ dội đã giảm đáng kể. <strong>Vấn đề thật sự nằm ở yếu tố thứ hai: sự tẩy não.</strong> Người nghiện đã quen dùng đồ ăn rác để “giải quyết” những thời điểm và hoàn cảnh nhất định. Điều này tạo ra những liên tưởng kiểu như:
+<em>“Mình mệt thì phải ăn cái gì đó cho sướng.”</em>
+<em>“Tối rồi, phải có snack hay nước ngọt thì mới thư giãn.”</em></p>
+<p>Cơ chế này giống như thói quen lái xe. Bạn quen một chiếc xe có cần xi-nhan ở bên trái. Khi đổi sang xe mới, cần đó nằm bên phải. Dù bạn <strong>biết rõ</strong> sự khác biệt, trong vài tuần đầu, tay bạn vẫn gạt nhầm cần gạt mưa. Không phải vì bạn ngu, mà vì thói quen cũ chưa phai.</p>
+<p>Việc dừng ăn đồ ăn rác cũng vậy. Trong những ngày đầu, các tín hiệu quen thuộc sẽ tự động xuất hiện. Ý nghĩ “ăn cho đã” có thể bật lên. Vì thế, <strong>việc tháo gỡ sự tẩy não ngay từ đầu là tối quan trọng</strong> — nếu không, các tín hiệu này sẽ tiếp tục được duy trì.</p>
+<p>Với phương pháp ý chí, người nghiện thường tin rằng mình đang “hy sinh”. Họ buồn bã, tiếc nuối, ngồi chờ cho cơn thèm qua đi. Cách tiếp cận này không những không vô hiệu hóa các liên tưởng cũ, mà còn làm chúng mạnh thêm. Tương tự, với cách tiếp cận kiểu “tự nâng cấp bản thân”, người ta bắt đầu tự hỏi khi nào mình sẽ đủ tỉnh thức, thậm chí đòi hỏi bản thân <strong>không được có bất kỳ suy nghĩ thèm ăn nào</strong>. Kết quả là thất vọng, rồi bỏ cuộc.</p>
+<p>Một yếu tố kích hoạt phổ biến là <strong>khi ở một mình</strong>, hoặc trong các dịp xã hội. Người đã ngừng ăn đồ ăn rác bằng ý chí thường đã rất khốn khổ vì cảm giác bị tước mất “niềm vui quen thuộc”. Trong khi đó, mọi người xung quanh thoải mái ăn uống, gọi thêm món, tráng miệng, đồ uống ngọt. Người nghiện thì hoặc đang cố kiềm chế, hoặc đang cảm thấy mình bị đứng ngoài cuộc. Những “máng trượt” trong não sẽ dẫn họ quay lại với đồ ăn rác, bởi vì điều đó dễ hơn rất nhiều so với việc ngồi yên với cảm giác trống rỗng do chính nghiện tạo ra.</p>
+<p>Do sự liên tưởng sai lầm giữa <strong>ăn đồ ăn rác và cảm giác dễ chịu</strong>, họ phải chịu một cú đánh ba tầng: cảm giác thiếu thốn, cảm giác bị loại trừ, và niềm tin rằng mình đang tự làm khổ bản thân. Nếu họ đủ lì để chịu đựng, cuối cùng họ sẽ “quen”. Nhưng <strong>một phần tẩy não vẫn còn sót lại</strong>. Hệ quả đáng buồn là có những người đã không ăn đồ ăn rác nhiều năm, nhưng vào những dịp nhất định vẫn thèm “chỉ một lần nữa thôi”. Họ đang khao khát một ảo ảnh chưa bao giờ tồn tại ngoài tâm trí mình, và tiếp tục tự hành hạ bản thân một cách không cần thiết.</p>
+<p>Ngay cả với phương pháp Easyway, <strong>phản ứng sai trước các yếu tố kích hoạt</strong> vẫn là nguyên nhân thất bại phổ biến nhất. Một số người bắt đầu coi đồ ăn rác như một dạng “giả dược”, tự nhủ:
+<em>“Tôi biết nó chẳng có lợi gì, nhưng nếu tôi tin rằng nó giúp mình dễ chịu hơn trong vài dịp thì cũng không sao.”</em></p>
+<p>Giả dược — như viên đường — đôi khi có thể làm giảm triệu chứng thật, dù không có tác dụng sinh lý thực sự. Nhưng <strong>đồ ăn rác không phải là giả dược</strong>. Tại sao? Vì nó <strong>tạo ra chính những triệu chứng mà nó hứa hẹn sẽ làm dịu</strong>, rồi chỉ tạm thời dập tắt chúng.</p>
+<p>Điều này sẽ rõ ràng hơn nếu bạn nghĩ đến một người <strong>không nghiện</strong>, hoặc một người đã thoát nghiện lâu năm. Giả sử họ trải qua một biến cố lớn trong đời. Ý nghĩ <em>“Hay ăn tạm cái gì đó cho đỡ mệt”</em> có thể thoáng qua. Nhưng nếu họ ăn, nó sẽ <strong>không thực sự giải quyết được gì</strong>, vì không có cơn thiếu dopamine đứng phía sau. Cùng lắm, nó chỉ tạo ra một cảm giác phân tâm rất ngắn.</p>
+<p>Sau khi ăn xong, vấn đề vẫn còn nguyên. Thậm chí, với người còn nghiện, mọi thứ còn tệ hơn, vì họ đã kích hoạt lại chu kỳ thèm – giải tỏa – trống rỗng. Lúc này họ lại phải lựa chọn: chịu đựng cảm giác khó chịu, hoặc tiếp tục “ăn thêm” để quay lại vòng lặp quen thuộc. Tất cả những gì đồ ăn rác mang lại chỉ là <strong>một cú đẩy tâm lý thoáng qua</strong>, không khác gì một bộ phim dở hay một thứ giải trí tạm bợ.</p>
+<p>Rất nhiều người đã tái nghiện chỉ vì những dịp như vậy. Hãy làm rõ điều này trong đầu: <strong>bạn không cần cú dopamine đó</strong>. Việc tiếp tục coi đồ ăn rác như một “liều nâng đỡ tinh thần” chỉ khiến bạn tự hành hạ mình lâu hơn. Không có lý do gì để phải đau khổ cả.</p>
+<p>Khoái cảm cực độ <strong>không tạo ra một mối quan hệ lành mạnh với việc ăn uống</strong>; trong hầu hết các trường hợp, nó làm hỏng mối quan hệ đó. Cũng cần nói rõ rằng không hoàn toàn đúng khi cho rằng những người ăn uống “thả ga” trong các dịp xã hội thực sự tận hưởng trọn vẹn khoảnh khắc ấy. Việc ăn uống được cảm nhận tốt nhất khi nó diễn ra tự nhiên, yên tĩnh, phù hợp với nhu cầu thật của cơ thể, chứ không phải dưới áp lực phô diễn, quảng cáo hay thói quen. Bạn không cần phải trở thành một người <strong>phụ thuộc dopamine từ khoái cảm ăn uống</strong>. Nếu việc thưởng thức xảy ra như một hệ quả tự nhiên của đời sống — khi cơ thể thật sự đói, khi bữa ăn phù hợp — thì không có vấn đề gì. Nhưng hãy tận hưởng những khoảnh khắc khác trong cuộc sống <strong>mà không cần đến khoái cảm nhân tạo từ đồ ăn rác</strong>.</p>
+<p>Sau khi từ bỏ quan niệm rằng đồ ăn rác là “niềm vui”, nhiều người bắt đầu nghĩ: <em>“Ước gì có đồ ăn rác lành mạnh hơn.”</em> Đồ ăn rác “phiên bản sạch”, “ít tội lỗi”, “healthy hơn” quả thật có tồn tại, và bất kỳ ai thử nó đủ lâu đều sớm nhận ra rằng đó chỉ là <strong>một sự lãng phí thời gian</strong>. Hãy làm rõ trong đầu bạn: <strong>lý do duy nhất bạn từng ăn đồ ăn rác là để thỏa mãn cơn thèm dopamine</strong>. Khi cơn thèm đó biến mất, bạn sẽ không còn nhu cầu tìm kiếm những phiên bản thay thế nữa.</p>
+<p>Dù cảm giác khó chịu xuất hiện là do <strong>cai dopamine thực sự</strong> hay do <strong>các yếu tố kích hoạt tâm lý</strong>, hãy chấp nhận nó. Không có đau đớn thể xác nào đang diễn ra, và với tâm thế đúng đắn, nó không phải là vấn đề. Đừng lo lắng về việc dừng ăn đồ ăn rác — <strong>bản thân cảm giác đó không hề tồi</strong>. Vấn đề nằm ở sự liên tưởng sai lầm: muốn ăn → rồi cảm thấy bị tước đoạt. Thay vì buồn bã hay tiếc nuối, hãy thừa nhận một cách tỉnh táo:</p>
+<p>“<em>Tôi biết đây là gì. Đây là cảm giác cai nghiện. Đây là thứ mà người nghiện phải chịu đựng suốt đời họ và chính nó giữ họ trong vòng lệ thuộc. Người không nghiện không phải chịu những cảm giác này. Đây chỉ là một trong nhiều hậu quả của một chứng nghiện giả tạo. Thật tuyệt vời khi tôi đang loại bỏ nó khỏi đầu mình.</em>”</p>
+<p>Nói cách khác, trong vài tuần tới, bạn sẽ trải qua một <strong>chấn động tâm lý nhẹ</strong>, nhưng trong chính khoảng thời gian đó — và trong suốt phần đời còn lại — một điều rất khác sẽ xảy ra. Bạn đang loại bỏ một căn bệnh âm thầm nhưng tàn phá, và cái giá phải trả nhỏ bé này <strong>không thể so sánh</strong> với phần thưởng nhận được. Những khoảnh khắc đó sẽ dần trở nên thú vị, giống như một trò chơi trí tuệ: <strong>bỏ đói con “sán dây” của đồ ăn rác</strong> đang sống nhờ vào thói quen và niềm tin sai lầm. Bạn chỉ cần bỏ đói nó trong một thời gian ngắn, trong khi nó cố lừa bạn quay lại kệ hàng, cửa tiệm, hay ứng dụng giao đồ ăn để được tiếp tục tồn tại.</p>
+<p>Đôi lúc, nó sẽ tìm cách làm bạn khó chịu. Đôi lúc, bạn sẽ bị đánh úp bởi những tình huống bất ngờ: đi ngang một cửa hàng quen, thấy quảng cáo, được mời ăn, hoặc vô tình nhìn thấy hình ảnh quen thuộc rồi chợt nhớ ra rằng mình đã dừng lại. Cảm giác thiếu thốn nhẹ có thể xuất hiện. Hãy <strong>chuẩn bị sẵn tinh thần cho những trò bịp này</strong>. Dù cảm giác có rõ ràng đến đâu, hãy khắc sâu một điều: <strong>nó chỉ tồn tại vì cơ chế nghiện</strong>, và mỗi lần bạn không phản ứng theo thói quen cũ, bạn đã cắt thêm một nguồn sống của nó.</p>
+<p>Dù thế nào, <strong>đừng cố gắng quên đồ ăn rác</strong>. Đây chính là cái bẫy khiến những người cai bằng ý chí rơi vào trạng thái u uất kéo dài. Họ cố sống qua từng ngày với hy vọng rằng một lúc nào đó mình sẽ “không còn nghĩ tới nó nữa”. Điều này giống như việc cố ngủ bằng cách liên tục nghĩ rằng mình phải ngủ — càng cố, càng thất bại. Trong vài ngày đầu, bạn <strong>không thể không nghĩ tới nó</strong>. Các cửa hàng, biển hiệu, ứng dụng, thói quen cũ vẫn ở đó; các lời nhắc sẽ xuất hiện liên tục.</p>
+<p>Bạn không cần phải quên, bởi vì <strong>không có điều gì xấu đang xảy ra cả</strong>. Trái lại, một điều rất tích cực đang diễn ra. Ngay cả khi ý nghĩ đó xuất hiện hàng chục, hàng trăm lần mỗi ngày, hãy nhìn thẳng vào nó và nhận ra: <strong>thật nhẹ nhõm khi không còn bị điều khiển nữa</strong>. Thật dễ chịu khi không còn phải tự hành hạ bản thân bằng những vòng lặp thèm – ăn – trống rỗng. Rất sớm thôi, bạn sẽ ngạc nhiên vì mình quên đồ ăn rác nhanh đến mức nào, một cách hoàn toàn tự nhiên.</p>
+<p>Dù bạn làm gì, <strong>đừng nghi ngờ quyết định của mình</strong>. Khi nghi ngờ xuất hiện, cảm giác tiếc nuối sẽ theo sau, và mọi thứ trở nên khó khăn hơn. Thay vào đó, hãy dùng chính khoảnh khắc đó để củng cố nhận thức. Nếu bạn thấy uể oải hay buồn chán, hãy nhắc mình rằng <strong>đồ ăn rác đã tạo ra trạng thái đó ngay từ đầu</strong>. Nếu ai đó rủ rê, hãy bình thản nhận ra rằng: <em>“Tôi không cần thứ đó trong cuộc sống của mình nữa.”</em> Khi người khác thấy bạn không còn bị nó chi phối, họ sẽ bắt đầu tự đặt câu hỏi cho chính họ.</p>
+<p>Hãy nhớ: <strong>bạn có những lý do rất rõ ràng để dừng lại ngay từ đầu</strong>. Hãy nhớ đến cái giá đã phải trả và tự hỏi liệu bạn có thực sự muốn đánh đổi cả cuộc đời để tiếp tục sống dưới một vòng lặp lệ thuộc hay không. Hãy để ý cách mà cơ chế nghiện cố giảm nhẹ mức độ nguy hiểm của nó, và trên hết, hãy nhớ rằng <strong>mọi cảm giác này đều là tạm thời</strong>. Mỗi khoảnh khắc trôi qua là một khoảnh khắc bạn tiến gần hơn đến tự do.</p>
+<p>Một số người lo sợ rằng họ sẽ phải dành cả đời để “đối phó với các yếu tố kích hoạt”. Nói cách khác, họ tin rằng họ sẽ phải liên tục tự trấn an mình bằng tâm lý học rằng mình không cần đồ ăn rác. Điều đó không đúng. Vấn đề chưa bao giờ nằm ở việc “tự lừa mình”. <strong>Đồ ăn rác không có lợi ích nào cả</strong>. Chính sự tẩy não đã khiến người nghiện tin rằng nó mang lại điều gì đó. Khi bạn bắt đầu thấy rõ rằng bạn <strong>không cần và cũng không muốn</strong> nó, rất nhanh thôi bạn thậm chí sẽ không cần phải tự nhắc nhở nữa. Sự thật sẽ tự hiển lộ.</p>
+<p>Đây là bước cuối cùng cần thực hiện. Và chỉ cần thực hiện nó đến cùng.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="21.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="23.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="21.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="23.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lần ăn cuối cùng - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="lần-ăn-cuối-cùng"><a class="header" href="#lần-ăn-cuối-cùng">Lần ăn cuối cùng</a></h1>
+<p>Khi đã chọn được thời điểm, bạn đã sẵn sàng để <strong>đối diện với đồ ăn rác lần cuối</strong>. Nhưng trước khi làm điều đó, hãy kiểm tra lại hai điểm cốt lõi sau đây.</p>
+<p>Thứ nhất, bạn có thực sự tin chắc rằng mình sẽ thành công không?
+Thứ hai, cảm giác trong bạn lúc này là nặng nề, miễn cưỡng, hay là sự nhẹ nhõm vì sắp thoát khỏi một thứ vô nghĩa?</p>
+<p>Nếu vẫn còn chút ngần ngại, hãy đọc lại những gì bạn vừa đi qua. Hãy nhớ điều này: bạn chưa bao giờ <em>chủ động</em> quyết định nghiện đồ ăn rác. Chính hệ thống đó — từ công thức, quảng cáo, cho đến cách phân phối — được thiết kế để giữ bạn mắc kẹt càng lâu càng tốt. Để thoát ra, bạn chỉ cần một quyết định rõ ràng và dứt khoát: rằng bạn sẽ <strong>ngừng ăn vì khoái cảm nhân tạo</strong>, và bạn sẽ thực hiện <strong>lần ăn đồ ăn rác cuối cùng</strong> của mình.</p>
+<p>Bạn đọc đến đây chỉ vì một lý do duy nhất: trong bạn có một khao khát rất thật là được tự do. Vậy thì hãy đưa ra quyết định đó ngay lúc này. Hãy xác nhận với chính mình rằng khi bạn kết thúc lần ăn này — dù cảm giác hiện tại là gì — bạn sẽ không bao giờ cần đến đồ ăn rác nữa. Có thể bạn lo lắng vì đã từng “quyết tâm” nhiều lần rồi mà vẫn thất bại, hoặc bạn sợ rằng lần này sẽ khó chịu. Nhưng hãy nhìn thẳng vào sự thật: điều tệ nhất có thể xảy ra chỉ là bạn không thành công, và nếu vậy bạn cũng không mất gì cả. Bạn chỉ có thể <em>hiểu thêm</em> mà thôi.</p>
+<p>Bây giờ, hãy gạt bỏ hoàn toàn ý nghĩ về thất bại. Sự thật là việc dừng ăn đồ ăn rác không chỉ dễ hơn bạn tưởng, mà bạn còn có thể quan sát quá trình này một cách tỉnh táo. Lần này, bạn không dựa vào ý chí. Bạn chỉ cần làm theo những điều đơn giản sau đây.</p>
+<p>Thứ nhất, hãy xác lập quyết định của bạn ngay bây giờ — và tin vào nó, không phải như một lời hứa gồng ép, mà như một sự thật hiển nhiên.
+Thứ hai, hãy nhìn thẳng vào đồ ăn rác mà bạn quen thuộc: bao bì, mùi vị, quảng cáo, hình ảnh “ngon miệng” được thổi phồng. Nhìn vào những nỗ lực tuyệt vọng của nhà sản xuất và marketing để làm cho sản phẩm của họ có vẻ đặc biệt, mới lạ, “đáng thưởng”, rồi tự hỏi một cách tỉnh táo: <strong>niềm vui thật sự nằm ở đâu?</strong>
+Thứ ba, khi bạn kết thúc lần ăn đó, đừng kết thúc với cảm giác “tôi không được phép ăn nữa” hay “tôi bị cấm”. Hãy kết thúc với cảm giác tự do: “Tốt rồi. Tôi không còn là nô lệ của việc ăn vì khoái cảm nhân tạo nữa. Tôi sẽ không bao giờ cần phải ăn những thứ này để cảm thấy ổn.”</p>
+<p>Thứ tư, hãy nhận thức rõ rằng trong vài ngày tới, sẽ có một cảm giác khó chịu nhẹ xuất hiện trong cơ thể. Nhiều người gọi nó là “cơn thèm”, và lầm tưởng rằng đó là nhu cầu sinh lý. Thực tế không phải vậy. Đói sinh lý là tín hiệu tự nhiên và rõ ràng của cơ thể cần năng lượng. Cảm giác xuất hiện sau khi dừng đồ ăn rác chỉ là <strong>sự trống rỗng và bồn chồn do chính thói quen nghiện tạo ra</strong>, bắt nguồn từ lần ăn đầu tiên và được duy trì bởi mỗi lần ăn tiếp theo.</p>
+<p>Vì phải mất một thời gian để thói quen thần kinh đó hoàn toàn biến mất, nhiều người tin rằng họ sẽ phải “chịu đựng” trong vài tuần, và do đó họ chuẩn bị sẵn tinh thần dùng ý chí để chống lại. Đây là một hiểu lầm nghiêm trọng. Cơ thể bạn không hề cần những cú kích thích đó. Chỉ có não bộ, đã quen với việc dùng đồ ăn rác để chấm dứt cảm giác khó chịu do chính nó tạo ra, mới phát tín hiệu sai.</p>
+<p>Nếu trong vài ngày tới bạn nhận ra một ý nghĩ kiểu như “ăn một chút chắc cũng được”, não bộ bạn có hai lựa chọn rất đơn giản. Nó có thể diễn giải cảm giác đó đúng với bản chất của nó: một dư âm trống rỗng vô nghĩa của thói quen cũ, và bạn có thể tự nhủ một cách tỉnh táo:
+<strong>“TỐT. MÌNH ĐÃ LÀ NGƯỜI KHÔNG ĂN ĐỒ ĂN RÁC RỒI.”</strong></p>
+<p>Hoặc bạn có thể diễn giải sai nó thành “thèm”, rồi bắt đầu chịu đựng, giằng co, và biến phần đời còn lại thành một chuỗi thiếu thốn. Hãy suy nghĩ xem cách nào vô lý hơn: vừa khẳng định “tôi không muốn ăn đồ ăn rác nữa”, vừa dành cả đời để than thở rằng “tôi thèm nó”? Đó chính là trạng thái của những người dừng lại bằng ý chí — không còn ăn, nhưng cũng không bao giờ tự do.</p>
+<p>Chính sự nghi ngờ và chờ đợi mới khiến việc dừng lại trở nên khó khăn. Vì vậy, <strong>đừng bao giờ nghi ngờ quyết định của bạn</strong>. Nếu bạn nghi ngờ, bạn sẽ tự đẩy mình vào thế bế tắc: khổ sở vì “thèm”, nhưng lại không muốn ăn. Mục tiêu của bạn không phải là “không bao giờ ăn lại”. Mục tiêu thật sự là <strong>không còn nhu cầu ăn đồ ăn rác nữa</strong>. Nhiều người đạt được vế đầu, nhưng lại thất bại hoàn toàn ở vế sau.</p>
+<p>Vậy sự khác biệt giữa người nghiện và người không nghiện là gì? Người không nghiện không có bất kỳ nhu cầu nào đối với đồ ăn rác. Họ không phải dùng ý chí để tránh nó. Và đó chính là trạng thái bạn đang đạt tới. Bạn không cần chờ đợi để “hết thèm” hay để “trở thành người không nghiện”. Mọi thứ đã hoàn tất ngay khi bạn kết thúc lần ăn cuối cùng đó và cắt đứt chuỗi kích thích nhân tạo. <strong>BẠN ĐÃ LÀ MỘT NGƯỜI KHÔNG NGHIỆN ĐỒ ĂN RÁC RỒI.</strong></p>
+<p>Bạn sẽ luôn là người không nghiện, miễn là bạn không nghi ngờ quyết định của mình; không chờ đợi một trạng thái đặc biệt nào trong tương lai; không cố gắng ép bản thân “đừng nghĩ tới” đồ ăn rác; không tìm kiếm các dạng thay thế trá hình; và nhìn những người vẫn mắc kẹt đúng với bản chất của họ — không phải với sự ghen tị, mà với sự hiểu rõ.</p>
+<p>Dù ngày tốt hay ngày xấu, đừng thay đổi cuộc sống của bạn chỉ vì bạn đã dừng ăn đồ ăn rác. Bạn không hề hy sinh điều gì. Bạn không từ bỏ niềm vui. Ngược lại, bạn đã thoát khỏi một cơ chế gây nghiện tinh vi. Khi thời gian trôi qua, những trải nghiệm tốt sẽ rõ ràng hơn, và những ngày tệ sẽ bớt nặng nề hơn so với khi bạn còn lệ thuộc. Bất cứ khi nào ý nghĩ về đồ ăn rác xuất hiện, hãy ghi nhận nó đúng cách:
+<strong>“TỐT. MÌNH KHÔNG CÒN LÀ NGƯỜI ĂN ĐỒ ĂN RÁC NỮA.”</strong></p>
+<h2 id="một-cảnh-báo-cuối-cùng"><a class="header" href="#một-cảnh-báo-cuối-cùng">Một cảnh báo cuối cùng</a></h2>
+<p>Không một người nghiện nào, nếu có thể quay lại thời điểm trước khi bị nghiện với hiểu biết hiện tại, lại chọn bắt đầu cả. Rất nhiều người đã dừng ăn đồ ăn rác trong nhiều năm, sống hoàn toàn ổn định, rồi lại rơi vào bẫy vì nghĩ rằng “chỉ một lần cũng không sao”. Việc dừng lại có thể dễ. Và chính vì thế, việc bắt đầu lại cũng dễ không kém. <strong>Đừng rơi vào cái bẫy đó.</strong></p>
+<p>Dù bạn đã dừng lại bao lâu, hãy xác lập cho mình một nguyên tắc rõ ràng: không ăn đồ ăn rác vì bất kỳ lý do gì. Hãy tỉnh táo trước quảng cáo, hình ảnh, và những thông điệp bình thường hóa việc ăn vì khoái cảm. Lần “ăn thử” đó không mang lại cho bạn bất kỳ lợi ích nào. Nó không giải tỏa khó chịu nào cả — vì không có khó chịu sinh lý cần giải tỏa. Nó chỉ làm sống lại con đường nghiện trong não, và ngay sau đó, một giọng nói quen thuộc sẽ xuất hiện, đòi thêm lần nữa. Khi đó, bạn lại phải chọn giữa việc chịu một chút dư âm vô nghĩa, hoặc bắt đầu lại toàn bộ chuỗi cũ.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="27.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="29.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="27.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="29.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

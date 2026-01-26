@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ta đang từ bỏ điều gì? - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="ta-đang-từ-bỏ-điều-gì"><a class="header" href="#ta-đang-từ-bỏ-điều-gì">Ta đang từ bỏ điều gì?</a></h1>
+<p><strong>KHÔNG GÌ CẢ.</strong></p>
+<p>Ăn đồ ăn rác khó bỏ không phải vì bạn thực sự cần nó, mà vì bạn tin rằng nếu không còn nó, bạn sẽ mất đi một niềm vui, một chỗ dựa tinh thần, hay một cách đối phó với cuộc sống. Bạn sợ rằng những khoảnh khắc dễ chịu sẽ không còn trọn vẹn. Sợ rằng khi căng thẳng, mệt mỏi, bạn sẽ không còn “cái gì đó” để bấu víu vào. Nói cách khác, đó là kết quả của sự tẩy não: niềm tin rằng <strong>ăn vì khoái cảm nhân tạo</strong> là một phần tất yếu của đời sống hiện đại, rằng những kích thích đậm đặc đó mang lại điều gì đó quan trọng, và từ bỏ chúng đồng nghĩa với việc tự tay vứt bỏ một phần hạnh phúc của mình, để rồi cuộc sống sẽ trở nên nhạt nhẽo, trống rỗng.</p>
+<p>Cần phải làm rõ ngay từ đầu:
+<strong>Đồ ăn rác tạo ra khoảng trống, chứ không hề lấp đầy khoảng trống.</strong></p>
+<p>Cơ thể con người là một hệ thống cực kỳ tinh vi. Dù bạn tin vào tiến hóa, sáng tạo hay bất kỳ cách lý giải nào khác, cũng khó phủ nhận rằng nó vượt xa mọi cỗ máy do con người tạo ra. Chúng ta không thể tạo nổi một tế bào sống đơn giản, chứ chưa nói đến những cơ chế phức tạp điều chỉnh cảm giác đói, no, khoái cảm, động lực và cảm xúc. Nếu cơ thể con người thực sự cần những kích thích siêu thường, liên tục và nhân tạo như đồ ăn rác, thì hệ thống thưởng–phạt đã được thiết kế khác đi từ đầu. Thực tế là cơ thể có các tín hiệu cảnh báo rất rõ ràng, và khi ta liên tục phớt lờ chúng, ta phải trả giá — không phải vì thiếu thứ gì đó, mà vì đã nạp vào thứ không thuộc về hệ thống tự nhiên.</p>
+<h2 id="không-có-gì-phải-từ-bỏ"><a class="header" href="#không-có-gì-phải-từ-bỏ">Không có gì phải từ bỏ</a></h2>
+<p>Khi bạn loại bỏ được <strong>con tiểu quỷ</strong> (cảm giác thèm tâm lý) khỏi cơ thể, và <strong>con đại quỷ</strong> (sự tẩy não) khỏi tâm trí, bạn sẽ không còn thôi thúc phải tìm đến đồ ăn rác để “xả stress”, “tự thưởng” hay “lấy lại năng lượng” nữa. Vấn đề là nghiện đồ ăn rác bị hiểu sai một cách nghiêm trọng. Nhiều người, kể cả trong giới chuyên môn, không coi đây là nghiện, mà chỉ là “thói quen xấu”, “thiếu kỷ luật” hay “ăn uống không điều độ”. Vì thế, hàng loạt triệu chứng rõ ràng bị gán nhầm cho nguyên nhân khác: mệt mỏi, cáu kỉnh, mất tập trung, ăn vô thức, cảm giác trống rỗng sau khi ăn.</p>
+<p>Người nghiện không ngu ngốc. Họ chỉ khổ sở khi <strong>không được ăn thứ họ nghiện</strong>. Họ bị kẹt giữa hai lựa chọn: hoặc cố nhịn và sống trong trạng thái bứt rứt, thiếu thốn, hoặc tiếp tục ăn và chìm trong cảm giác tội lỗi, chán ghét bản thân. Khi cơ thể bắt đầu phản ứng — tăng cân, uể oải, rối loạn cảm giác đói no — tâm trí cũng bắt đầu giằng xé: một bên muốn nhìn thẳng vào sự thật, một bên chỉ muốn quay đi và tiếp tục như cũ.</p>
+<p>Hãy quan sát một người nghiện nặng: họ không ăn vì ngon, mà vì <strong>khó chịu khi không ăn</strong>. Sự “ngon miệng” thực chất chỉ là khoảnh khắc chấm dứt cơn bứt rứt do chính nghiện tạo ra. Người không nghiện không phải liên tục nghĩ xem nên ăn gì, ăn lúc nào, ăn thêm hay không. Chỉ người nghiện mới phải thương lượng với chính mình như vậy.</p>
+<p>Với rất nhiều người, những trải nghiệm đầu tiên với đồ ăn rác — vị ngọt đậm, béo, mặn, giòn — tạo ra một cú sốc khoái cảm, khiến họ tin rằng ăn “bình thường” là nhạt nhẽo, không đủ thỏa mãn. Đồ ăn rác còn được quảng bá như phần thưởng, như cứu cánh tinh thần, như thứ giúp bạn “xả stress”, “bù đắp”, “chăm sóc bản thân”. Thực tế thì ngược lại: nó làm giảm khả năng tận hưởng thức ăn thật và khiến mối quan hệ với việc ăn uống trở nên méo mó.</p>
+<p>Bạn không chỉ không mất gì khi thoát khỏi nghiện, mà còn lấy lại rất nhiều thứ. Người nghiện khi nghĩ đến việc dừng ăn đồ ăn rác thường chỉ tập trung vào cân nặng hay sức khỏe thể chất. Những điều đó đúng, nhưng lợi ích lớn nhất nằm ở tinh thần:</p>
+<ul>
+<li>Sự tự tin và cảm giác làm chủ bản thân.</li>
+<li>Tự do khỏi cảnh lệ thuộc vào cơn thèm.</li>
+<li>Không còn vòng lặp ám ảnh, tội lỗi và tự khinh miệt sau mỗi lần ăn.</li>
+</ul>
+<h2 id="trống-rỗng"><a class="header" href="#trống-rỗng">Trống rỗng</a></h2>
+<p>Hãy tưởng tượng bạn bị một vết loét trên da. Bạn được đưa cho một loại thuốc bôi miễn phí. Mỗi lần bôi, cơn đau biến mất ngay lập tức. Một thời gian sau, vết loét quay lại, nặng hơn. Bạn lại bôi thuốc, và nó lại biến mất. Nhưng chu kỳ tái phát ngày càng ngắn, vết loét ngày càng đau, cho đến khi bạn không thể sống thiếu tuýp thuốc đó. Bạn mang theo nó mọi lúc, lo sợ nếu thiếu thì sẽ không chịu nổi. Thuốc rất đắt, nhưng bạn không có lựa chọn.</p>
+<p>Rồi bạn phát hiện ra sự thật: thuốc không chữa lành vết loét. Nó chỉ đẩy vấn đề xuống dưới bề mặt, khiến tình trạng ngày càng trầm trọng. Nguyên nhân của vết loét chính là thứ thuốc mà bạn đang lệ thuộc. Tất cả những gì bạn cần làm để nó lành lại là <strong>ngừng bôi thuốc</strong>.</p>
+<p>Bạn có cần phải dùng ý chí để không bôi nữa không? Không. Khi bạn hiểu rõ bản chất vấn đề, nỗi sợ tan biến. Ngay cả nếu phải mất thời gian để vết loét lành hẳn, mỗi ngày trôi qua, khi cơn đau giảm dần, bạn sẽ càng chắc chắn rằng mình đã đi đúng hướng.</p>
+<p>Nghiện đồ ăn rác cũng vậy. Nỗi đau không chỉ nằm ở thể chất — cảm giác nặng nề, uể oải, mất năng lượng — mà còn ở tinh thần: ăn trong vô thức, ăn trong cô độc, cảm giác trống rỗng ngay sau khi “đã miệng”, sự tự thất vọng vì không kiểm soát được bản thân. Những điều này cộng hưởng, khiến bạn càng sợ hãi ý nghĩ “không có đồ ăn rác”.</p>
+<p>Chính nỗi sợ này khiến bạn né tránh sự thật. Nó tạo ra cảm giác hoảng loạn mỗi khi bạn không thể thỏa mãn cơn thèm. Người không nghiện <strong>không bao giờ</strong> trải qua cảm giác đó. Điều tồi tệ nhất mà nghiện gây ra không phải là tăng cân hay mệt mỏi, mà là <strong>nỗi sợ</strong>: sợ thiếu, sợ trống rỗng, sợ không chịu nổi cuộc sống nếu không có thứ đó. Và phần thưởng lớn nhất khi thoát nghiện chính là sự giải phóng khỏi nỗi sợ ấy.</p>
+<p>Vẫn có những người tự cho mình là “nghiện hạnh phúc”, tin rằng đồ ăn rác mang lại niềm vui thật sự. Họ bị con tiểu quỷ thì thầm những lời ngọt ngào, khiến ngay cả khi đang sống trong vòng lệ thuộc, họ vẫn cố tìm mọi lý lẽ để biện minh cho nó. Nhưng sự thật vẫn ở đó, không đổi: thứ họ đang bám vào không mang lại hạnh phúc, mà chỉ duy trì sự thiếu thốn do chính nó tạo ra.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="06.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="08.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="06.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="08.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
