@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Thoát nghiện đồ ăn rác - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="khu-thoát-nghiện---Đồ-ăn-rác"><a class="header" href="#khu-thoát-nghiện---Đồ-ăn-rác">Khu thoát nghiện - Đồ ăn rác</a></h1>
+<p>Một dự án từ <a href="https://khuthoatnghien.github.io">Khu thoát nghiện</a>.</p>
+<p>Cuốn sách này là phiên bản <a href="https://sites.google.com/site/hackbookeasypeasy">viết lại</a> của cuốn sách <em>Allen Carr's EasyWay to Smoking</em> cho đồ ăn rác (ultra-processed food, junkfood, fastfood .etc.), hoàn toàn miễn phí và mã nguồn mở, phát hành dưới giấy phép CC-BY-SA. Khả năng thành công của phương pháp này phụ thuộc vào việc bạn:</p>
+<p><span style="font-size:xx-large;">KHÔNG BỎ QUA CHƯƠNG</span></p>
+<p>Khi mở khoá mật mã, bạn sẽ cần phải nhập số theo đúng thứ tự. Với cơn nghiện thì điều đó cũng tương tự. Phương pháp trong cuốn sách này hoạt động hoàn toàn khác so với những phương pháp mà bạn đã thử, và cũng chính là phương pháp duy nhất thực sự hiệu quả.</p>
+<h2 id="lưu-ý-nhỏ"><a class="header" href="#lưu-ý-nhỏ">Lưu ý nhỏ</a></h2>
+<p>Nếu bạn đang mong đợi cuốn sách này sẽ khiến bạn sợ hãi để bỏ rượu bia — bằng cách liệt kê hàng loạt bệnh tật, tai nạn, suy sụp đạo đức, hay bằng cách quy kết rằng uống rượu là hành vi yếu đuối, vô trách nhiệm và thiếu ý chí — thì bạn sẽ thất vọng. Những cách đó chưa từng giúp tôi thoát khỏi rượu bia. Và nếu chúng thực sự có tác dụng, thì bạn đã không cần đọc đến đây.</p>
+<p>Các phương pháp cai rượu phổ biến thường xoay quanh ý chí, hoặc những giải pháp “thỏa hiệp” như: chỉ uống cuối tuần, uống ít lại, uống có kiểm soát. Một số cách tiếp cận khoa học phân tích vai trò của cồn, chất dẫn truyền thần kinh, hay sự thay đổi trong não bộ. Chúng có thể đúng, thậm chí rất chính xác. Nhưng chúng không giải thích được một điều đơn giản: vì sao người hiểu rõ mọi tác hại vẫn tiếp tục uống. Biến rượu bia thành một điều cấm kỵ, hoặc một kẻ thù cần chống lại, chưa bao giờ là cách để chấm dứt nghiện.</p>
+<p>Cuốn sách này đi theo một hướng khác hẳn. Một số điều bạn sắp đọc có thể nghe rất lạ, thậm chí khó chấp nhận. Nhưng nếu đọc đến cùng, bạn sẽ không chỉ thấy chúng hợp lý, mà còn nhận ra điều đáng ngạc nhiên hơn: vì sao trong suốt thời gian dài như vậy, bạn lại tin vào những điều hoàn toàn ngược lại.</p>
+<p>Có một niềm tin rất phổ biến: rằng chúng ta <em>chọn</em> uống rượu. Người nghiện rượu “chọn” uống rượu, giống như thể đó là một quyết định tự do. Đúng là không ai ép bạn cầm ly, không ai đổ rượu vào miệng bạn. Nhưng câu hỏi quan trọng không phải là <em>ai rót</em>, mà là: <strong>vì sao bạn không thể dừng lại?</strong></p>
+<p>Hãy suy nghĩ kỹ. Đã bao giờ bạn chủ động quyết định rằng mình <em>cần</em> rượu bia để sống bình thường chưa? Rằng bạn cần rượu để thư giãn, để ngủ, để nói chuyện dễ dàng hơn, để tự tin, để chịu đựng áp lực? Có thời điểm nào bạn nhận ra rằng một buổi tối sau giờ làm là không thể chịu nổi nếu thiếu vài ly? Hay rằng việc dự tiệc, gặp gỡ bạn bè, hoặc thậm chí chỉ ở một mình trở nên khó khăn nếu không có rượu? Khi nào bạn quyết định rằng rượu bia phải gắn bó lâu dài với đời mình, và rằng thiếu nó sẽ khiến bạn bứt rứt, trống rỗng, thậm chí hoảng loạn?</p>
+<p>Cũng như tất cả những người nghiện khác, bạn đã bị mắc vào một cái bẫy — tinh vi và rất khó nhận ra. Không có bậc cha mẹ nào mong con mình phải dựa vào rượu để cảm thấy ổn. Không ai lớn lên với ước mơ trở thành người nghiện rượu. Trước khi bị nghiện, không ai cần rượu để tận hưởng cuộc sống hay để đối mặt với căng thẳng.</p>
+<p>Vậy mà người nghiện vẫn tiếp tục uống. Không có ai cưỡng ép. Dù có thừa nhận hay không, chính người nghiện là người quyết định uống. Và chính nghịch lý đó khiến họ rối bời: <em>nếu tôi ghét điều này, tại sao tôi vẫn làm?</em></p>
+<p>Thứ duy nhất giữ bạn lại là <strong>nỗi sợ</strong>. Nỗi sợ được tạo ra bởi niềm tin rằng bỏ rượu đồng nghĩa với một giai đoạn dài thiếu thốn, bứt rứt, căng thẳng và khổ sở.</p>
+<p>Bạn sợ những buổi tối không rượu sẽ dài và trống rỗng. Sợ tiệc tùng trở thành cực hình. Sợ rằng bạn sẽ không ngủ được, không thư giãn được, không giao tiếp được, không còn là chính mình nếu thiếu rượu. Bạn sợ sự tự tin giảm đi, khả năng chịu áp lực suy yếu, và thậm chí tính cách của bạn thay đổi.</p>
+<p>Nhưng sâu xa nhất là nỗi sợ này: “đã nghiện thì không thể cai”. Rằng bạn sẽ không bao giờ thực sự tự do, và cuộc đời bạn sẽ mãi là một cuộc giằng co. Nếu bạn từng cố bỏ bằng ý chí, từng chịu đựng những ngày tháng đầy bứt rứt và thất bại, thì nỗi sợ đó không chỉ tồn tại — bạn tin rằng nó là sự thật.</p>
+<p>Nếu lúc này bạn cảm thấy lo lắng, hoặc nghĩ rằng đây chưa phải lúc thích hợp để bỏ rượu, thì cần làm rõ một điều: <strong>rượu không làm dịu nỗi sợ đó</strong>. Chính rượu đã tạo ra nó. Bạn không cố ý bước vào cái bẫy này, nhưng cũng như mọi cái bẫy khác, nó được thiết kế để giữ bạn mắc kẹt.</p>
+<p>Hãy tự hỏi: lần đầu tiên bạn uống rượu, bạn có dự định sẽ uống suốt đời không? Nếu không, thì khi nào bạn sẽ dừng? Tuần sau? Năm tới? Điều đó không có ý nghĩa gì. Một cái bẫy chỉ hiệu quả khi nó giữ bạn lại cho đến khi gây ra tổn hại nghiêm trọng. Nếu không, vì sao phần lớn người nghiện không tự nhiên dừng lại khi mọi thứ còn trong tầm kiểm soát?</p>
+<p>Cần nói rõ điều này:</p>
+<p>Cũng như câu hỏi con gà hay quả trứng, mọi người nghiện đều muốn bỏ, và mọi người nghiện đều <em>có thể</em> bỏ rượu bia một cách dễ dàng. Thứ duy nhất ngăn họ là nỗi sợ. Việc quan trọng nhất là loại bỏ nỗi sợ đó. Nhưng điều này chỉ xảy ra khi bạn đọc đến hết cuốn sách. Trên thực tế, trong quá trình đọc, nỗi sợ của bạn có thể tăng lên — và chính vì thế nhiều người bỏ dở.</p>
+<p>Bạn không chọn rơi vào bẫy rượu, nhưng bạn sẽ không thoát ra nếu không đưa ra một quyết định rõ ràng. Bạn có thể cảm thấy căng thẳng khi nghĩ đến việc bỏ, hoặc e ngại chính ý tưởng đó. Dù thế nào, hãy ghi nhớ: <strong>bạn không có gì để mất</strong>.</p>
+<p>Nếu đọc xong mà bạn vẫn muốn tiếp tục uống, không có ai ngăn cản bạn. Bạn không cần phải giảm uống hay ngừng uống trong lúc đọc.</p>
+<p>Ngược lại, có một sự thật khác. Hãy hình dung cảm giác của một người cuối cùng bước ra khỏi nhà tù sau nhiều năm bị giam giữ. Đó chính là cảm giác khi thoát khỏi bẫy rượu bia. Khi bạn đọc đến cuối, đó sẽ là cảm giác của bạn.</p>
+<h2 id="cuối-cùng"><a class="header" href="#cuối-cùng">Cuối cùng…</a></h2>
+<p>Ai cũng có thể thấy việc thoát khỏi rượu bia là dễ dàng — kể cả bạn. Điều duy nhất cần thiết là tiếp tục đọc với một tâm thế cởi mở. Hiểu càng rõ, mọi thứ càng đơn giản. Ngay cả khi chưa hoàn toàn hiểu, việc đi đúng trình tự vẫn đủ để mọi thứ tự bộc lộ. Quan trọng nhất là: bạn sẽ không phải chịu đựng sự thiếu thốn hay hy sinh. Khi kết thúc cuốn sách, điều duy nhất khiến bạn ngạc nhiên là vì sao mình lại uống lâu đến vậy.</p>
+<p>Với phương pháp này, chỉ có hai nguyên nhân dẫn đến thất bại.</p>
+<p>Thứ nhất: <strong>không làm đúng theo hướng dẫn</strong>.<br />
+Một số người khó chịu vì cuốn sách này không chấp nhận khái niệm “uống điều độ” hay các giải pháp thay thế. Đúng là có người bỏ được rượu dù vẫn dựa vào những cách đó — nhưng họ thành công <em>bất chấp</em> chúng, không phải nhờ chúng. Cái bẫy này có một ổ khóa, và tổ hợp mở nằm ở đây. Nhưng bạn phải xoay đúng thứ tự. Nghĩa là đọc tuần tự, không bỏ qua phần nào.</p>
+<p>Thứ hai: <strong>không thực sự hiểu nội dung</strong>.<br />
+Đừng xem bất cứ điều gì là hiển nhiên. Hãy nghi ngờ không chỉ những gì bạn từng được nghe, mà cả những niềm tin của chính bạn, và tất cả những điều xã hội đã dạy bạn về rượu bia và nghiện ngập.</p>
+<p>Nếu bạn nghĩ đây chỉ là một thói quen, hãy tự hỏi: vì sao những thói quen khác — thậm chí dễ chịu hơn — lại dễ bỏ, còn một “thói quen” khiến bạn mệt mỏi, tốn tiền, làm hại sức khỏe và các mối quan hệ thì lại khó bỏ đến vậy? Nếu bạn tin rằng mình thực sự <em>thích</em> rượu, hãy tự hỏi: vì sao bạn có thể thiếu nhiều thứ khác mà không bận tâm, nhưng lại hoảng sợ khi nghĩ đến việc thiếu rượu?</p>
+<p>Cuốn sách này sẽ cho thấy rằng việc bỏ rượu bia có thể nhẹ nhõm và đơn giản. Đối với tôi, thoát khỏi bẫy rượu là một trong những điều rõ ràng nhất từng xảy ra. Không có lý do gì để bi quan. Bạn đang tiến gần đến điều mà mọi người nghiện đều mong muốn: <strong>tự do</strong>.</p>
+<p><strong>HÃY NHỚ: ĐỪNG BỎ QUA CHƯƠNG NÀO.</strong></p>
+<h2 id="cách-đọc-và-vài-ghi-chú-cuối"><a class="header" href="#cách-đọc-và-vài-ghi-chú-cuối">Cách đọc và vài ghi chú cuối</a></h2>
+<p>Đừng đọc cuốn sách này như đọc một cuốn sách thông thường. Nó ngắn, và bạn có thể đọc xong trong vài giờ. Việc đánh dấu, ghi chú và đọc lại sẽ giúp bạn nhìn rõ hơn những điều vốn bị che khuất.</p>
+<p>Nhắc lại là: <span style="font-size:larger;"><strong>KHÔNG BỎ QUA CHƯƠNG</strong></span></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="02.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="02.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

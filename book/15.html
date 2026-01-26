@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Người nghiện “đồ ăn thay thế” - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="người-nghiện-đồ-ăn-thay-thế"><a class="header" href="#người-nghiện-đồ-ăn-thay-thế">Người nghiện “đồ ăn thay thế”</a></h1>
+<p>Nhóm này về bản chất không khác người nghiện đồ ăn rác thông thường, nhưng mức độ nguy hại của nó âm thầm và tinh vi đến mức xứng đáng có một chương riêng. Nó bào mòn khả năng tự chủ và gây tổn hại sâu sắc, hãy xem một trường hợp điển hình được chia sẻ trong một cộng đồng cai nghiện:</p>
+<blockquote>
+<p><em>“Tôi đã ngừng ăn đồ ăn rác được gần ba tuần. Vợ tôi từ lâu đã lo lắng về tình trạng uể oải, thiếu năng lượng và việc tôi luôn ‘hết pin’ vào buổi tối. Điều đó khiến tôi bắt đầu nghĩ nghiêm túc về chuyện dừng lại. Tôi nói với cô ấy là do áp lực công việc, không phải do cô ấy. Cô ấy trả lời: ‘Em biết anh từng xử lý áp lực rất tốt. Nhưng nếu anh là em, anh sẽ cảm thấy thế nào khi thấy người mình yêu đang tự làm hại bản thân?’ Tôi không thể phủ nhận điều đó, và bắt đầu cố gắng thoát khỏi thói quen này.”</em></p>
+<p><em>“Tôi không chịu được lâu. Tôi thấy bứt rứt và cần được ‘xả’. Vì tối đó không có bữa ăn ngon như mong đợi, tôi tự thuyết phục mình rằng mình xứng đáng được ăn chút gì đó cho đỡ khó chịu. Tôi hứa với bản thân rằng chỉ ‘ăn nhẹ’, chỉ đặt mấy món vặt qua ứng dụng, không đụng đến đồ nặng đô. Nhưng tối hôm đó vợ tôi lại chuẩn bị một bữa ăn tử tế và muốn ăn cùng nhau. Tôi thì đã no nê, uể oải, nên viện cớ mệt và bỏ qua. Tôi không chịu nổi ý nghĩ mình làm cô ấy thất vọng. Rồi dần dần, tôi quay lại con đường cũ, với đồ ăn giao nhanh và đồ ăn chế biến sẵn trở thành ‘chỗ dựa’ mới. Lúc đó tôi còn tự hài lòng, nghĩ rằng ít nhất mình đã cắt giảm. Cuối cùng, cô ấy phàn nàn rằng tôi không còn hứng thú ăn uống cùng gia đình nữa. Tôi không nhận ra, nhưng cô ấy kể lại những lần tôi lấy cớ ra ngoài mua đồ lặt vặt hàng giờ, hoặc giả vờ đau bụng để né tránh. Khi đã có một nguồn đồ ăn rác luôn sẵn sàng, mọi thứ còn trở nên tệ hơn.”</em></p>
+</blockquote>
+<p>Điều tồi tệ nhất ở kiểu nghiện này là nó củng cố thêm ảo tưởng rằng bạn đang “thiếu” một thứ gì đó. Đồng thời, nó làm xói mòn lòng tự trọng; một người vốn trung thực có thể buộc mình phải nói dối người thân yêu. Có thể điều đó đã xảy ra, hoặc đang xảy ra với bạn, dưới một hình thức nào đó.</p>
+<p>Vấn đề với các ứng dụng giao đồ ăn, video mukbang, quảng cáo thức ăn, mạng xã hội tràn ngập hình ảnh đồ ăn… nằm ở sự <em>bổ sung</em>. Bị thúc đẩy bởi thôi thúc dopamine tìm kiếm sự mới lạ, người nghiện tự lừa mình rằng mình đang chọn một hình thức “an toàn”. Hãy nhớ: cảm giác kích thích nằm ở quá trình tìm kiếm và tưởng tượng, không phải ở việc ăn. Và “con tiểu quỷ” không quan tâm nguồn cung đến từ đâu. Với người nghiện, những nội dung và lựa chọn “nhẹ nhàng” này chỉ mang lại sự dịu đi tạm thời của cơn khó chịu, giữ họ trong trạng thái nghiện và chờ đợi lần ăn đồ ăn rác tiếp theo.</p>
+<p>Những món ăn trong hình ảnh và video quả thực trông rất hấp dẫn. Nếu chúng thực sự được nấu tươi, ăn trong bối cảnh bình thường, chúng có thể mang lại sự thỏa mãn sinh lý. Nhưng hình ảnh và quảng cáo thì không. Tất cả chỉ là ảo ảnh. Bộ não bạn bị dẫn dắt như con bò lao vào tấm vải đỏ, rồi không hiểu vì sao mình lại làm thế. Có thể bạn nghĩ rằng chỉ cần “xem cho đỡ thèm”, không cần ăn. Nhưng hãy nhớ rằng bộ não đã bị nghiện sự mới lạ vô hạn, và con tiểu quỷ không hề quan tâm liều của nó đến từ việc xem, đặt món hay ăn thật. Cuối cùng, đó vẫn là cùng một cái bẫy.</p>
+<p>Có lẽ bạn đã từng xem loạt phim <em>Columbo</em>. Mỗi tập đều có mô-típ quen thuộc. Kẻ gây án, thường là một người thành đạt và được kính trọng, tin rằng mình đã che giấu hoàn hảo. Sự tự tin đó càng tăng khi hắn thấy viên thanh tra trông lôi thôi và tầm thường lại phụ trách vụ án.</p>
+<p>Columbo có thói quen khó chịu là rời đi sau buổi thẩm vấn, như thể mọi chuyện đã xong. Nhưng ngay trước khi vẻ mặt mãn nguyện kịp ổn định, ông quay lại và nói: <em>“Chỉ còn một chi tiết nhỏ thôi, thưa ông, tôi chắc ông giải thích được…”</em> Từ khoảnh khắc đó, kẻ gây án biết rằng mình đã bị nắm thóp. Dù tội ác có ghê gớm thế nào, sự thông cảm kỳ lạ lại bắt đầu nghiêng về phía hắn.</p>
+<p>Cơn vật vã của người nghiện đồ ăn rác cũng tương tự như vậy. Sự căng thẳng khi tự đặt ra “giới hạn”, không được vượt qua ranh giới để có “liều” mà mình nghĩ là xứng đáng. Rồi sự hụt hẫng khi đã ăn xong mà không thấy thỏa mãn ở đâu. Nỗi sợ mất kiểm soát, quay lại vòng lặp cũ, trong khi vẫn lo lắng về bữa ăn tử tế tiếp theo cùng gia đình. Những món “an toàn” sẽ dần không còn tác dụng do sự chai lì và thiếu mới lạ, cùng với sự chắc chắn rằng sớm hay muộn bạn cũng sẽ quay lại đồ ăn rác quen thuộc. Và rồi là cảm giác xấu hổ, tủi nhục khi điều đó trở thành sự thật: quay lại nguồn cung quen thuộc và ăn không kiểm soát.</p>
+<p><strong>ÔI, NHỮNG “NIỀM VUI” CỦA VIỆC LÀM NÔ LỆ CHO VIỆC ĂN VÌ KHOÁI CẢM NHÂN TẠO!</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="14.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="16.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="14.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="16.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

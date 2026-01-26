@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cẩn thận với việc cắt giảm - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="cẩn-thận-với-việc-cắt-giảm"><a class="header" href="#cẩn-thận-với-việc-cắt-giảm">Cẩn thận với việc cắt giảm</a></h1>
+<p>Nhiều người nghiện tìm đến việc <strong>cắt giảm</strong> như một bước đệm để dừng ăn đồ ăn rác, hoặc như một nỗ lực nhằm “kiểm soát” con tiểu quỷ. Có thể bạn cũng đã được khuyên nên ăn ít lại, “ăn điều độ”, hay “ăn kiêng đồ ăn rác” để cải thiện tinh thần. Việc dùng cắt giảm như một bước đệm để thoát nghiện là một <strong>sai lầm nghiêm trọng</strong>. Chính những nỗ lực cắt giảm này khiến con người mắc kẹt với đồ ăn rác trong suốt phần đời còn lại. Thông thường, cắt giảm xuất hiện sau một lần thất bại khi cố dừng hẳn. Sau vài giờ hoặc vài ngày kiêng khem, người nghiện bắt đầu tự nói với mình những điều như:</p>
+<p>“Không thể chịu nổi cảm giác đi ngủ mà không ăn mấy thứ đó. Từ giờ mình sẽ chỉ ăn đồ ăn rác bốn ngày một lần. Nếu làm được vậy, mình có thể giữ nguyên hoặc giảm thêm.”</p>
+<p>Một số điều rất tệ chắc chắn sẽ xảy ra:</p>
+<ol>
+<li>Họ rơi vào trạng thái tệ nhất có thể: vẫn nghiện đồ ăn rác, giữ cho con quỷ sống sót không chỉ trong cơ thể mà còn trong tâm trí.</li>
+<li>Họ bắt đầu mong thời gian trôi nhanh để đến “bữa” tiếp theo.</li>
+<li>Trước khi cắt giảm, bất cứ khi nào muốn ăn, họ chỉ cần ghé cửa hàng hay mở ứng dụng để tạm dập cơn bứt rứt. Giờ đây, ngoài những căng thẳng vốn có của cuộc sống, họ còn <strong>tự tạo thêm cơn vật vã</strong> trong phần lớn thời gian sống, khiến sự khổ sở tăng lên gấp bội.</li>
+<li>Khi đến lượt “được ăn”, họ hầu như không còn tận hưởng gì. Mọi thứ diễn ra tự động. Lần duy nhất họ cảm thấy “đã” là lần phải nhịn sau một quãng kiêng khem dài. Khi họ buộc mình chờ thêm một ngày, một tuần cho mỗi lần ăn, thì mỗi lần đó lại có vẻ “tuyệt vời” hơn. Nhưng cái gọi là “tận hưởng” đó không nằm ở món ăn, mà ở <strong>sự chấm dứt cảm giác bồn chồn do thèm muốn gây ra</strong> — dù là thèm về mặt sinh lý nhẹ hay hoàn toàn là thèm tâm lý. Chịu đựng càng lâu, cảm giác giải tỏa càng bị hiểu nhầm là khoái lạc.</li>
+</ol>
+<p>Khó khăn chính trong việc dừng ăn đồ ăn rác <strong>không nằm ở lệ thuộc sinh học</strong>, vì phần này xử lý khá dễ. Người nghiện có thể không ăn trong nhiều hoàn cảnh khác nhau mà không gặp vấn đề gì: khi có việc gia đình, khi quá bận rộn, khi ốm, hoặc khi hoàn cảnh không cho phép. Họ có thể nhịn mười ngày mà không hề khó khăn — miễn là <strong>không có cơ hội ăn</strong>. Nhưng nếu phải nhịn mười ngày trong khi hoàn toàn có thể ăn, họ sẽ phát điên.</p>
+<p>Nhiều người nghiện có thể đi làm cả ngày mà không ghé cửa hàng quen. Họ có thể đi ngang qua các quầy đồ ăn nhanh, siêu thị, kệ bánh kẹo mà không gặp rắc rối lớn. Họ có thể kiềm chế khi ở nhà người khác, khi có khách, hay khi ngủ nhờ ở nơi không tiện ăn uống. Ngay cả trong trung tâm thương mại đầy quảng cáo, cũng không xảy ra “bạo loạn”. Thực tế, người nghiện đang muốn thoát thường cảm thấy một sự nhẹ nhõm kỳ lạ khi có ai đó hoặc hoàn cảnh nào đó <strong>ngăn họ ăn</strong>. Việc “không được ăn” mang lại cho họ hy vọng rằng có lẽ một ngày nào đó họ sẽ không còn muốn ăn những thứ đó nữa.</p>
+<p>Vấn đề thật sự không nằm ở thức ăn, mà ở <strong>sự tẩy não</strong>: ảo tưởng rằng đồ ăn rác là chỗ dựa, là phần thưởng, và rằng cuộc sống sẽ không bao giờ trọn vẹn nếu thiếu nó. Việc cắt giảm chỉ làm bạn thêm bất an và khổ sở, thuyết phục bạn rằng món ăn tiếp theo bạn đang “bỏ lỡ” là thứ quý giá nhất trên đời, rằng bạn sẽ không bao giờ hạnh phúc trở lại nếu không được ăn nó.</p>
+<p>Thật đáng buồn. Người nghiện tin rằng ăn càng ít thì càng ít muốn. Trên thực tế, ăn càng ít thì <strong>cơn vật vã kéo dài hơn</strong>, và khoảnh khắc giải tỏa càng bị thổi phồng thành “khoái cảm”. Rồi họ nhận ra rằng món quen thuộc không còn “đã” như trước nữa. Nhưng điều đó không ngăn được họ. Nếu chỉ có một món duy nhất tồn tại, chẳng ai ăn quá một lần. Chính sự lặp lại cưỡng ép mới tạo ra vòng nghiện.</p>
+<p>Nghe có vẻ khó tin? Hãy tự hỏi: khoảnh khắc tồi tệ nhất của việc “tự chủ” là gì? Chờ đợi bốn ngày. Và khoảnh khắc được coi là “đáng giá” nhất trong chế độ ăn bốn ngày một lần là gì? Chính là <strong>lần ăn sau bốn ngày chờ đợi</strong>. Vậy bạn ăn vì tận hưởng món ăn, hay vì cần giải tỏa cơn bứt rứt với ảo tưởng rằng mình “xứng đáng được thưởng”?</p>
+<p>Loại bỏ sự tẩy não là bước then chốt để xóa tan mọi ảo tưởng về đồ ăn rác, <strong>trước khi</strong> bạn thực sự cắt đứt với nó. Nếu bạn chưa thực sự rũ bỏ niềm tin rằng mình “thích” đồ ăn rác, thì bạn sẽ không bao giờ chứng minh được điều đó về sau mà không tái nghiện. Khi đứng trước kệ hàng quen thuộc hay lướt qua các hình ảnh quảng cáo, hãy tự hỏi: điều này có gì đáng tự hào? Có thể bạn tin rằng chỉ một vài món nhất định là “hợp gu”. Nếu vậy, tại sao bạn lại ăn những món khác? Vì thói quen? Vì sợ bỏ lỡ? Tại sao phải tự làm rối loạn bộ não của mình? Một tháng sau cũng chẳng có gì khác, vậy tại sao món đó lại được coi là đặc biệt?</p>
+<p>Bạn có thể tự kiểm chứng. Hãy nhớ lại món “khoái khẩu” bạn ăn tháng trước. Rồi sau một tháng không ăn đồ ăn rác, hãy tưởng tượng lại cảm giác đó. Nó gần như không khác. Cảm giác chỉ thay đổi khi bạn đang căng thẳng, hụt hẫng, hoặc vừa trải qua một sự từ chối nào đó. Lý do là người nghiện <strong>không thể thực sự thoải mái</strong> khi con tiểu quỷ bên trong vẫn chưa được dập tắt.</p>
+<p>Vậy sự “thỏa mãn” nằm ở đâu? Đơn giản là ở chỗ: nếu không giải tỏa cơn thèm, họ sẽ khổ sở. Sự khác biệt giữa việc ăn và không ăn được hiểu nhầm là sự khác biệt giữa hạnh phúc và khốn khổ. Đó là lý do đồ ăn rác có vẻ “tốt”. Nhưng thực ra, những người vừa tỉnh dậy đã vội tìm đồ ăn rác đều đang khổ sở — bất kể họ có ăn hay không.</p>
+<p>Cắt giảm không những không hiệu quả, mà còn là một hình thức tra tấn tinh thần kéo dài. Nó không hiệu quả vì người nghiện hy vọng rằng bằng cách ăn ngày càng ít, ham muốn sẽ giảm dần. Nhưng đây <strong>không phải thói quen</strong>, mà là <strong>nghiện</strong>. Bản chất của nghiện là muốn nhiều hơn, không phải ít đi. Vì vậy, để cắt giảm, người nghiện phải dùng ý chí và kỷ luật suốt đời. Cắt giảm đồng nghĩa với ý chí suốt đời. Thoát nghiện hoàn toàn thì dễ hơn và ít đau đớn hơn rất nhiều; đã có vô số trường hợp cắt giảm thất bại.</p>
+<p>Vấn đề của việc dừng ăn đồ ăn rác không nằm ở dopamine — phần đó xử lý rất nhanh. Vấn đề nằm ở <strong>niềm tin sai lầm</strong> rằng đồ ăn rác mang lại khoái lạc. Niềm tin này được gieo từ trước khi bạn bắt đầu, rồi được chính sự nghiện củng cố thêm. Việc cắt giảm chỉ làm cho ngụy biện này ăn sâu hơn, cho đến khi đồ ăn rác chi phối toàn bộ đời sống tinh thần và được xem là thứ quý giá nhất.</p>
+<p>Một số ít trường hợp “thành công” là nhờ họ dừng hẳn sau một giai đoạn cắt giảm ngắn — nhưng họ dừng <strong>bất chấp</strong> cắt giảm, không phải nhờ nó. Cắt giảm chỉ kéo dài đau khổ, khiến người nghiện suy nhược và càng tin rằng mình đã nghiện suốt đời. Điều này thường đủ để họ quay lại tìm đồ ăn rác như một chỗ dựa tinh thần, ít nhất là “thêm một giai đoạn nữa”.</p>
+<p>Tuy nhiên, cắt giảm có một tác dụng duy nhất: nó phơi bày sự vô nghĩa của đồ ăn rác. Bạn chỉ thấy nó “ngon” khi phải chịu đựng trước đó. Vì vậy, các lựa chọn thực sự là:</p>
+<ol>
+<li>Cắt giảm suốt đời và tự tra tấn bản thân — điều bạn sẽ không thể duy trì.</li>
+<li>Tiếp tục hành hạ mình suốt đời — hoàn toàn vô nghĩa.</li>
+<li>Đối xử tử tế với chính mình và <strong>cắt bỏ hoàn toàn</strong> đồ ăn rác.</li>
+</ol>
+<p>Một điều cuối cùng mà cắt giảm phơi bày rất rõ: <strong>không tồn tại cái gọi là “thỉnh thoảng ăn”</strong>. Đồ ăn rác là một phản ứng dây chuyền, và nếu không chủ động phá vỡ nó, nó sẽ kéo dài đến hết cuộc đời.</p>
+<p>Hãy nhớ: <strong>càng cố “cai” bằng ý chí, bạn càng không thể thoát.</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="11.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="13.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="11.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="13.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

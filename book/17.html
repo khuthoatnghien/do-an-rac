@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html lang="vi" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Thời điểm (Timing) - Khu thoát nghiện - Đồ ăn rác</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Khu thoát nghiện - Đồ ăn rác</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="thời-điểm-timing"><a class="header" href="#thời-điểm-timing">Thời điểm (Timing)</a></h1>
+<p>Ngoài sự thật hiển nhiên rằng đồ ăn rác không mang lại bất kỳ lợi ích nào cho bạn, và rõ ràng <strong>bây giờ</strong> đã là thời điểm thích hợp để dừng lại, thì việc chọn đúng thời điểm vẫn là một yếu tố then chốt.</p>
+<p>Xã hội coi đồ ăn rác như một thói quen vô hại, hoặc cùng lắm chỉ “không tốt lắm”. Đây là một quan niệm sai lầm hoàn toàn. Đồ ăn rác không khác gì một dạng nghiện, là một cơ chế gây lệ thuộc nguy hiểm, và là nguồn gốc phá hoại sức khỏe thể chất lẫn tinh thần. Điều tồi tệ nhất mà nhiều người gặp phải trong đời chính là bị mắc kẹt trong vòng nghiện này. Nếu tiếp tục trượt dài, hậu quả chỉ có thể ngày càng nặng nề hơn.</p>
+<p>Trong nhiều năm, giới chuyên môn đã đánh giá thấp vấn đề này, bởi họ không phân biệt được sự khác nhau giữa thực phẩm công nghiệp đơn giản thời trước và những sản phẩm siêu chế biến ngày nay. Vấn đề không nằm ở việc cơ thể “cần” chúng, mà ở chỗ: dù người nghiện ăn chỉ để xoa dịu cơn thèm do chính đồ ăn rác tạo ra, thứ trói buộc họ không phải là đói sinh lý, mà là <strong>sự tẩy não</strong>.</p>
+<p>Một người thông minh hoàn toàn có thể rơi vào bẫy. Nhưng chỉ có người không nhìn thẳng vào sự thật mới tiếp tục mắc kẹt khi đã thấy rõ cơ chế của cái bẫy đó. May mắn là phần lớn người nghiện không hề kém cỏi — họ chỉ tin rằng mình yếu đuối vì không “kiểm soát được ăn uống”. Mỗi người bị tẩy não theo một cách khác nhau, đó là lý do vì sao dường như có vô số kiểu nghiện đồ ăn rác khác nhau.</p>
+<p>Dù phương pháp gốc được xây dựng cho một dạng nghiện khác, điều đáng chú ý là triết lý cốt lõi của nó vẫn hoạt động nguyên vẹn khi áp dụng cho nghiện đồ ăn rác.</p>
+<p>Xã hội tin rằng việc bỏ đồ ăn rác là cực kỳ khó khăn. Và khi gặp khó khăn, người ta cần gì? Một “phần thưởng”, một “bữa ăn xả stress”, một chỗ dựa tinh thần. Việc bỏ đồ ăn rác trông giống như một cú đánh kép: vừa phải chịu đựng cảm giác thiếu, vừa mất đi thứ mà ta từng dùng để an ủi bản thân. Điểm mấu chốt của phương pháp này nằm ở chỗ: <strong>bạn không cần phải “từ bỏ” trong quá trình thoát nghiện</strong>. Thay vào đó, ta loại bỏ tận gốc nỗi sợ và ảo tưởng, để khi bữa ăn rác cuối cùng kết thúc, bạn đã không còn là nô lệ nữa.</p>
+<p>Hãy nhớ kỹ điều này: <strong>bạn không từ bỏ bất kỳ thứ gì có giá trị</strong>. Ngược lại, bạn đang lấy lại rất nhiều thứ.</p>
+<p>Quay lại với vấn đề “thời điểm”. Trước hết, hãy dành khoảng ba tuần để quan sát và dự đoán những tình huống có thể kích hoạt thói quen cũ: lúc rảnh rỗi, buồn chán, ở một mình, căng thẳng, hoặc khi đi ngang qua cửa hàng quen thuộc. Đừng nản lòng vì việc này. Chỉ cần bạn nhìn thấy trước chúng và <strong>không gán cho chúng ý nghĩa thiếu thốn</strong>.</p>
+<p>Trong giai đoạn này, đừng cố cắt giảm. Bạn chưa cần bỏ hẳn. Chỉ cần chú ý đến sự thất vọng sau khi ăn, cảm giác nặng nề, những kỳ vọng không được đáp ứng, các dấu hiệu khó chịu trong người, sự cáu kỉnh và uể oải. Đồng thời, hãy hình dung cảm giác nhẹ nhõm khi bạn không còn phải chịu những điều đó nữa.</p>
+<p>Vậy khi nào bạn nên bắt đầu giai đoạn ba tuần này? Nhiều người nghiện vẫn coi đồ ăn rác là cách “xả stress”, “tự thưởng”, hay làm cho cuộc sống bớt tẻ nhạt, nên họ chờ đến lúc mình rảnh rỗi, thư giãn. Nhưng khi đó, động lực để thoát nghiện lại biến mất. Sự thật là: dù bạn đang bận rộn hay thảnh thơi, <strong>cơ chế nghiện vẫn y nguyên</strong>. Trong những hoàn cảnh mà bạn từng nghĩ là “cần ăn nhất”, thứ duy nhất thay đổi chỉ là việc chỗ dựa giả không còn được dùng nữa.</p>
+<p>Một phép so sánh đơn giản: có người bước xuống nước từ từ, nhúng từng ngón chân, chần chừ rất lâu. Nhưng sớm muộn gì họ cũng phải xuống. Người khác thì nhảy thẳng xuống cho xong. Nếu bạn bắt ai đó phải “sẵn sàng hoàn toàn” rồi mới xuống, rất có thể họ sẽ không bao giờ xuống cả.</p>
+<p>Vấn đề của nghiện đồ ăn rác cũng vậy. Lời khuyên đúng đắn nhất thực ra rất đơn giản: <strong>thời điểm tốt nhất là ngay bây giờ</strong>. Nhưng chính cái bẫy tinh vi nhất nằm ở chỗ này: khi cuộc sống căng thẳng, ta nghĩ chưa phải lúc; khi cuộc sống êm đềm, ta lại quên mất lý do cần dừng lại.</p>
+<p>Hãy tự hỏi:</p>
+<ol>
+<li>
+<p>Khi bắt đầu ăn đồ ăn rác, bạn có quyết định rằng mình sẽ lệ thuộc vào nó suốt đời không?
+Tất nhiên là không.</p>
+</li>
+<li>
+<p>Bạn có định tiếp tục cả phần đời còn lại mà không bao giờ dừng được không?
+Tất nhiên là không.</p>
+</li>
+</ol>
+<p>Vậy thì khi nào bạn sẽ dừng? Ngày mai? Năm sau? Hay một ngày nào đó “thuận lợi hơn”? Đó chẳng phải là câu hỏi bạn đã tự hỏi mình từ lâu rồi sao? Bạn có đang hy vọng một ngày thức dậy và tự nhiên không còn thèm nữa không? Điều đó không xảy ra. Với bất kỳ dạng nghiện nào, nếu không phá bỏ, nó chỉ ngày càng mạnh hơn.</p>
+<p>Cái bẫy chết người chính là niềm tin rằng <strong>bây giờ chưa phải lúc</strong>, và rằng ngày mai sẽ dễ hơn. Thực tế là cuộc sống hiện đại ít căng thẳng hơn rất nhiều so với những gì bộ não tiến hóa của chúng ta được chuẩn bị để đối phó. Chúng ta không phải lo thú dữ, không phải vật lộn để kiếm thức ăn cho ngày mai. Cơ thể và não bộ con người đã được trang bị đầy đủ để xử lý căng thẳng thực sự. Thứ làm kiệt quệ con người không phải là trách nhiệm hay công việc, mà là những chỗ dựa tinh thần giả tạo mà họ bám vào.</p>
+<p>Hãy nhìn vấn đề một cách thẳng thắn: bạn đã quyết tâm không sống cả đời trong cái bẫy này. Vậy thì sớm hay muộn, bạn cũng phải thoát ra. Đồ ăn rác không phải là thói quen hay thú vui vô hại; nó là một cơ chế nghiện. Và chúng ta đều biết rằng việc dừng lại <strong>không bao giờ dễ hơn vào ngày mai</strong> — nó chỉ khó hơn.</p>
+<p>Vì vậy, thời điểm đúng là <strong>ngay bây giờ</strong>, hoặc sớm nhất có thể. Một tuần trôi qua rất nhanh. Và hãy hình dung sự khác biệt khi bạn được sống trọn vẹn phần đời còn lại, thay vì tiếp tục xoay vòng trong nghiện ngập. Nếu bạn đi đúng theo hướng dẫn, bạn không chỉ thấy việc dừng lại là dễ dàng, mà còn <strong>thực sự tận hưởng quá trình tự giải phóng này</strong>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="16.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="18.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="16.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="18.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
